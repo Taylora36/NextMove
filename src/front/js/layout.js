@@ -5,7 +5,6 @@ import ScrollToTop from "./components/scrollToTop";
 import { Home } from "./pages/Home.jsx";
 import injectContext from "./store/appContext";
 
-import { Sidebar } from "./components/Sidebar.jsx";
 import { Footer } from "./components/Footer.jsx";
 
 //create your first component
@@ -18,7 +17,6 @@ const Layout = () => {
     <div>
       <BrowserRouter basename={basename}>
         <ScrollToTop>
-          <Sidebar />
           <Routes>
             <Route element={<Home />} path="/" />
             <Route element={<h1>Not found!</h1>} />
