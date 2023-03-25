@@ -1,0 +1,17 @@
+.top_row{
+    display:flex;
+}
+.title_page{
+    margin:auto;
+}
+.filter_button{
+    margin-right:3rem;
+    margin-top:1rem;
+}
+.search_bar{
+    text-align: center;
+}
+.card_carousel{
+    display:flex;
+    text-align:center;
+}

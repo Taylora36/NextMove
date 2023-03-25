@@ -7,6 +7,7 @@ import injectContext from "./store/appContext";
 
 import { Sidebar } from "./components/Sidebar.jsx";
 import { Footer } from "./components/Footer.jsx";
+import { Locations } from "./pages/Locations.jsx";
 
 //create your first component
 const Layout = () => {
@@ -19,6 +20,7 @@ const Layout = () => {
       <BrowserRouter basename={basename}>
         <ScrollToTop>
           <Sidebar />
+          <Locations />
           <Routes>
             <Route element={<Home />} path="/" />
             <Route element={<h1>Not found!</h1>} />
