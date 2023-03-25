@@ -5,3 +5,214 @@
     one more css for each page that will contain the selected used 
     on that page only (the ones not reused in other pages).
 */
+
+/* image */
+/* position / size */
+/* repeat */
+/* attachment */
+/* origin */
+/* clip */
+/* color */
+
+.home__container {
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: 100% 100%;
+  isolation: isolate;
+}
+
+.blob__left {
+  height: 41rem;
+  width: 41rem;
+  position: absolute;
+  top: -18rem;
+  left: -18rem;
+  z-index: -1;
+  background: linear-gradient(0.58turn, #a8504a, #c66e68, #e48c86);
+  border-radius: 50%;
+}
+
+.layout__grid {
+  display: grid;
+  grid-template:
+    "left right" auto
+    / 1fr 1fr;
+  justify-items: center;
+  align-items: stretch;
+  grid-gap: 0.3rem;
+  margin-top: 100px;
+}
+
+.left__col {
+  grid-area: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left__col p:not(:nth-child(3)) {
+  text-align: left;
+  font-weight: bold;
+  line-height: 3rem;
+}
+
+.left__col p:first-child {
+  font-size: 3rem;
+}
+
+.left__col p:nth-child(2) {
+  font-size: 6rem;
+  color: #e84a4a;
+}
+
+.left__col p:nth-child(3) {
+  word-spacing: 3rem;
+  font-size: 1.5rem;
+}
+
+.left__col p:nth-child(3),
+.cta__button {
+  margin-top: 2rem;
+}
+
+.cta__button {
+  background-color: #fbeee0;
+  border: 2px solid #422800;
+  border-radius: 5px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 0 1.2rem;
+  line-height: 3rem;
+  user-select: none;
+  touch-action: manipulation;
+  transition: all 0.3s ease 0s;
+}
+
+.cta__button:hover {
+  color: #e84a4a;
+  background-color: #ffdbb580;
+}
+
+.cta__button:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+.right__col {
+  grid-area: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content__layout {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(0.9turn, #dba45c, #e09871, #e48c86);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.content__header {
+  font-weight: bold;
+  font-size: 1.6rem;
+  padding-top: 10rem;
+  padding-bottom: 6rem;
+}
+
+.carousel__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 50%;
+  width: 50%;
+  background-color: #fbeee0;
+  border: 2px solid #422800;
+  border-radius: 0.6rem;
+  box-shadow: #422800 6px 6px 4px 0;
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-left: 50px solid #000000;
+  border-bottom: 25px solid transparent;
+  margin-bottom: 1rem;
+}
+
+.layout__grid__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  grid-gap: 0.125rem;
+  border: 3px solid blue;
+}
+
+.two__column {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.5rem;
+}
+
+.contact__container__left {
+  margin-left: auto;
+  margin-right: 6rem;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.contact__container__right {
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  font-weight: bold;
+  gap: 1rem;
+  margin-right: auto;
+  margin-left: 6rem;
+}
+
+.contact__container__right > * {
+  border-radius: 8px;
+  width: 30rem;
+  padding: 10px;
+}
+
+.contact__container__right textarea {
+  height: 10rem;
+}
+
+.submit__button {
+  padding: 0;
+  text-transform: uppercase;
+  width: 15rem;
+  margin: auto;
+}
+
+.nav__footer {
+  margin: 3rem auto 0 auto;
+}
+
+.no__effect::before {
+  display: none;
+}
+
+/* Scrollbar */
+body::-webkit-scrollbar {
+  width: 1rem;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #d6512991;
+}
