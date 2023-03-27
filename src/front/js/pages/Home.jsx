@@ -15,7 +15,7 @@ const Home = () => {
     <>
       <div
         className="home__container"
-        style={{ height: "inherit", backgroundImage: `url(${background})` }}
+        // style={{ height: "inherit", backgroundImage: `url(${background})` }}
       >
         <span className="blob__left"></span>
         <Navbar className="nav__bar" />
@@ -34,10 +34,15 @@ const Home = () => {
         </section>
       </div>
       <section className="content__layout">
-        <div className="content__header">3 Simple Steps</div>
-        <div className="carousel__container">
+        <div className="content__header">
+          <p>
+            3 steps to find your <span className="cta__text">NextMove</span>,
+            it's just that easy!
+          </p>
+          <span className="animate__bounce">⬇</span>
+        </div>
+        <div className="content__card">
           <div>Carousel</div>
-          <div className="arrow"></div>
         </div>
       </section>
       <footer className="layout__grid__footer">

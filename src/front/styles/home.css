@@ -1,24 +1,7 @@
-/*
-    home.css: This website contains selectors only used in home.css
-
-    All pages share the styles on index.css but you should create 
-    one more css for each page that will contain the selected used 
-    on that page only (the ones not reused in other pages).
-*/
-
-/* image */
-/* position / size */
-/* repeat */
-/* attachment */
-/* origin */
-/* clip */
-/* color */
-
 .home__container {
-  background-repeat: no-repeat;
-  background-position: top right;
-  background-size: 100% 100%;
-  isolation: isolate;
+  height: 50rem;
+  background: linear-gradient(0.9turn, #dba45c, #e09871, #e48c86);
+  clip-path: polygon(0 0%, 100% 0, 100% 70%, 0 95%);
 }
 
 .blob__left {
@@ -108,50 +91,31 @@
   justify-content: center;
 }
 
+/* Section 2: Info */
 .content__layout {
   height: 100%;
   width: 100%;
-  background: linear-gradient(0.9turn, #dba45c, #e09871, #e48c86);
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
 .content__header {
-  font-weight: bold;
-  font-size: 1.6rem;
-  padding-top: 10rem;
-  padding-bottom: 6rem;
-}
-
-.carousel__container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  height: 50%;
-  width: 50%;
-  background-color: #fbeee0;
-  border: 2px solid #422800;
-  border-radius: 0.6rem;
-  box-shadow: #422800 6px 6px 4px 0;
+  font-weight: bold;
+  font-size: 1.6rem;
+  padding-bottom: 6rem;
+  text-transform: capitalize;
 }
 
-.arrow {
-  width: 0;
-  height: 0;
-  border-top: 25px solid transparent;
-  border-left: 50px solid #000000;
-  border-bottom: 25px solid transparent;
-  margin-bottom: 1rem;
-}
-
+/* Footer */
 .layout__grid__footer {
   display: flex;
   flex-direction: column;
   align-items: start;
   grid-gap: 0.125rem;
-  border: 3px solid blue;
 }
 
 .two__column {
@@ -215,4 +179,23 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background: #d6512991;
+}
+
+/* Animations */
+.animate__bounce {
+  font-size: 3rem;
+  color: #dba45c;
+  animation: bounce 0.5s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 15px, 0);
+  }
 }

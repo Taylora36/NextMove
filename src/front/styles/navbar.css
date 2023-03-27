@@ -5,6 +5,14 @@ header {
   padding: 1.8rem 6%;
 }
 
+svg#logo-40 {
+  transition: transform 0.3s ease-in-out;
+}
+
+svg#logo-40:hover {
+  transform: scale(1.2);
+}
+
 .nav__links {
   list-style: none;
 }
