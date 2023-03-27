@@ -2,16 +2,56 @@
     display:flex;
 }
 .title_page{
-    margin:auto;
+    margin: 1rem auto 0 auto;
+    width:min-content;
+    padding-bottom: 7rem;
 }
 .filter_button{
-    margin-right:3rem;
-    margin-top:1rem;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left:10px;
+    background-color:black;
+    color:white;
+    font-size: 15px;
+}
+.filter_symbol{
+    padding-left:15px;
+    color:white;
 }
 .search_bar{
     text-align: center;
 }
-.card_carousel{
+
+._cards{
     display:flex;
-    text-align:center;
+    z-index: -1;
+    margin: 1rem auto 0 auto;
+    width:min-content;
+}
+.search_bar{
+    margin:auto;
+}
+.search{
+    border-radius:25px;
+    /* border: none; */
+    width:450px;
+    height:35px;
+}
+.search_button{
+    background-color:brown;
+    color: #f2f2f2;
+    padding: 7px 10px;
+    font-size: 12px;
+    border: none;
+    border-radius:5rem;
+    cursor: pointer;
+}
+._arrow{
+    position: absolute;
+    top: 85%;
+    left: 85%;
+    
 }
