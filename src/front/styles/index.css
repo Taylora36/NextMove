@@ -1,12 +1,9 @@
-/* 
-    General Styles used on every website (Don't Repeat Yourself)
-*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,700&display=swap");
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
 
@@ -18,6 +15,11 @@ a {
   text-decoration: none;
 }
 
-.layout__container {
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
   background-color: #f6eee3;
 }
