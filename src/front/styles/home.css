@@ -1,4 +1,4 @@
-.home__container {
+.landing__container {
   min-height: 100vh;
   width: 90vw;
   max-width: 118.75rem;
@@ -106,9 +106,10 @@
 /* Section 2: About */
 .about__section {
   height: 100vh;
+  padding-bottom: 6rem;
 }
 
-.about__text__container {
+.about__header__container {
   display: flex;
   justify-content: center;
 }
@@ -125,66 +126,42 @@
 }
 
 .about__card__container {
+  height: 50vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 1rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.about__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 20rem;
+  height: 15rem;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.about__card__header {
+  text-align: center;
+}
+
+.about__icon {
+  font-size: 2.5rem;
+}
+
+.about__card__text {
+  font-size: 1.5rem;
 }
 
 /* Footer */
-.layout__grid__footer {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  grid-gap: 0.125rem;
-}
-
-.two__column {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  margin-top: 0.5rem;
-}
-
-.contact__container__left {
-  margin-left: auto;
-  margin-right: 6rem;
-  font-weight: bold;
-  font-size: 3rem;
-}
-
-.contact__container__right {
-  display: flex;
-  flex-direction: column;
-  align-items: normal;
-  font-weight: bold;
-  gap: 1rem;
-  margin-right: auto;
-  margin-left: 6rem;
-}
-
-.contact__container__right > * {
-  border-radius: 8px;
-  width: 30rem;
-  padding: 10px;
-}
-
-.contact__container__right textarea {
-  height: 10rem;
-}
-
-.submit__button {
-  padding: 0;
-  text-transform: uppercase;
-  width: 15rem;
-  margin: auto;
-}
-
 .nav__footer {
-  margin: 3rem auto 0 auto;
-}
-
-.no__effect::before {
-  display: none;
+  display: flex;
+  justify-content: center;
 }
 
 /* Scrollbar */
