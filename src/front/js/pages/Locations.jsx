@@ -4,7 +4,7 @@ import { Sidebar } from "../components/Sidebar.jsx";
 import { Card } from "../components/PlaceholderCard.jsx";
 import "../../styles/locations.css";
 import { BsFilter } from 'react-icons/bs';
-import { GoTriangleRight } from 'react-icons/go';
+import { IoIosArrowForward } from 'react-icons/io';
 
 export const Locations = () => {
     return(
@@ -16,22 +16,18 @@ export const Locations = () => {
         <h1>Explore</h1>
       </div>
       <div className="_filter">
-        <button className="filter_button">Filter<span className="filter_symbol"><BsFilter/></span></button>
+        <button className="filter_button" role="button">Filter<span className="filter_symbol"><BsFilter/></span></button>
       </div>
     </div>
-    <form className="search_bar">
+    <form className="search_bar cf">
       <input className="search" placeholder="Search city..." type="text" />
-      <button className="search_button">Go</button>
+      <button className="search_button" type="submit">Go</button>
     </form>
     <div className="card_lineup">
-      <div className="_cards">
       <Card/>
       <Card/>
       <Card/>
-      </div>
-      <div className="_arrow">
-        <span><GoTriangleRight/></span>
-      </div>
+      <button className="arrow_button"><IoIosArrowForward/></button>
     </div>
   </div>
   </div>
