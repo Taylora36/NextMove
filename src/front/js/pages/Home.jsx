@@ -7,7 +7,7 @@ import Navbar from "../components/Navbar.jsx";
 // Styles & Assets
 import "../../styles/home.css";
 import LogoSVG from "../components/LogoSVG.jsx";
-import heroImage from "../../assets/car_map.png";
+import carMap from "../../assets/car_map_fixed.png";
 
 // React Icons
 import { FaWpexplorer } from "react-icons/fa";
@@ -33,7 +33,7 @@ const Home = () => {
             </NavLink>
           </div>
           <div className="hero__bannerImage__container">
-            <img src={heroImage} alt="" />
+            <img src={carMap} alt="" />
           </div>
         </main>
       </div>
@@ -45,8 +45,8 @@ const Home = () => {
         </a>
       </div>
 
-      <section id="about" className="about__section">
-        <div className="about__header__container">
+      <section id="about" className="about__container">
+        <div className="about__text__container">
           <p className="text__heading text__about">
             with 3 simple steps, it's just that{" "}
             <span className="text__green">easy!</span>
@@ -78,18 +78,59 @@ const Home = () => {
         </div>
       </section>
 
-      <section id="contact" className="contact__section">
-        <div className="contact__header__container">
+      <section id="contact" className="contact__container">
+        <div className="contact__text__container">
           <p className="text__heading text__contact">Contact Us</p>
+          <p className="text__regular">
+            Our team is happy to answer any questions or concerns. Fill out the
+            form and we'll be in touch as soon as possible.
+          </p>
         </div>
         <div className="contact__input__container">
-          <input placeholder="Name"></input>
-          <input placeholder="Email"></input>
-          <input placeholder="Phone (optional)"></input>
-          <textarea placeholder="Message"></textarea>
-          <button type="submit" className="submit__button">
-            Submit
-          </button>
+          <div className="contact__input">
+            <label for="name">Name</label>
+            <input
+              className="input__field"
+              id="name"
+              type="text"
+              placeholder="Name"
+              required
+            />
+          </div>
+          <div className="contact__input">
+            <label for="email">Email</label>
+            <input
+              className="input__field"
+              id="email"
+              type="text"
+              placeholder="YourEmail@something.com"
+              required
+            />
+          </div>
+          <div className="contact__input">
+            <label for="tel">Phone #</label>
+            <input
+              className="input__field"
+              id="phone"
+              type="phone"
+              placeholder="(123)456-7890 (optional)"
+            />
+          </div>
+          <div className="contact__input">
+            <label for="message">Anything else?</label>
+            <textarea
+              className="input__field"
+              name="message"
+              id="message"
+              cols="22"
+              rows="5"
+            ></textarea>
+          </div>
+          <div>
+            <button type="submit" className="submit__button">
+              Submit
+            </button>
+          </div>
         </div>
       </section>
 
