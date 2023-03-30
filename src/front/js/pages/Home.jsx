@@ -6,7 +6,6 @@ import Navbar from "../components/Navbar.jsx";
 
 // Styles & Assets
 import "../../styles/home.css";
-import LogoSVG from "../components/LogoSVG.jsx";
 import carMap from "../../assets/car_map_fixed.png";
 
 // React Icons
@@ -124,43 +123,16 @@ const Home = () => {
               id="message"
               cols="22"
               rows="5"
+              placeholder="Your Message to us!"
             ></textarea>
           </div>
-          <div>
+          <div className="contact__button">
             <button type="submit" className="submit__button">
               Submit
             </button>
           </div>
         </div>
       </section>
-
-      <footer>
-        <div className="nav__footer">
-          <nav>
-            <ul className="nav__links">
-              <li>
-                <NavLink to="/" className="no__effect">
-                  <LogoSVG />
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/">Home</NavLink>
-              </li>
-              <li>
-                <NavLink to="/contact">Contact</NavLink>
-              </li>
-              <li>
-                <NavLink to="/about">About</NavLink>
-              </li>
-              <li>
-                <NavLink to="/login" className="login__button no__effect">
-                  Login
-                </NavLink>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </footer>
     </>
   );
 };

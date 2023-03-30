@@ -23,6 +23,7 @@ svg#logo-40:hover {
 }
 
 .nav__links li a {
+  font-size: 1.2rem;
   position: relative;
   transition: all 0.3s ease 0s;
 }
@@ -57,7 +58,6 @@ svg#logo-40:hover {
   box-shadow: #422800 4px 4px 0 0;
   color: #422800;
   font-weight: 600;
-  font-size: 1.2rem;
   padding: 0 1.2rem;
   line-height: 3rem;
   text-align: center;
@@ -77,4 +77,9 @@ svg#logo-40:hover {
 
 .no__effect::before {
   display: none;
+}
+
+.nav__footer {
+  display: flex;
+  justify-content: center;
 }

@@ -70,7 +70,8 @@
   align-items: center;
 }
 
-.cta__button {
+.cta__button,
+.submit__button {
   background-color: #fbeee0;
   border: 2px solid #422800;
   border-radius: 5px;
@@ -86,12 +87,14 @@
   transition: all 0.3s ease 0s;
 }
 
-.cta__button:hover {
+.cta__button:hover,
+.submit__button:hover {
   color: #e84a4a;
   background-color: #ffdbb580;
 }
 
-.cta__button:active {
+.cta__button:active,
+.submit__button:active {
   box-shadow: #422800 2px 2px 0 0;
   transform: translate(2px, 2px);
 }
@@ -184,6 +187,7 @@
 }
 
 .text__contact {
+  color: #333333;
   font-weight: bold;
 }
 
@@ -197,29 +201,42 @@
   padding: 2rem;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 24px 30px, rgba(0, 0, 0, 0.22) 0px 6px 20px;
   border-radius: 0.3rem;
-  background-color: #faecdd;
+  background: linear-gradient(0.9turn, #e48c86, #e09871, #dba45c);
 }
 
-.contact__input {
+label {
+  font-weight: bold;
+  color: #333333;
+}
+
+.contact__input,
+.contact__button {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 0.5rem;
 }
 
-.input__field {
+.input__field,
+.submit__button {
   height: 5%;
-  width: 60%;
   padding: 0.3rem;
   border: none;
   border-bottom: 1px solid #33333350;
   border-radius: 0.3rem;
 }
 
-/* Footer */
-.nav__footer {
-  display: flex;
-  justify-content: center;
+.input__field {
+  width: 60%;
+}
+
+.contact__button {
+  justify-content: flex-end;
+}
+
+.submit__button {
+  width: 30%;
+  line-height: 1.5rem;
 }
 
 /* Scrollbar */
