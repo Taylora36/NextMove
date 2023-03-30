@@ -1,5 +1,6 @@
-.whole_container{
-    background-image:linear-gradient(#DBA45C, #E48C86, #000000);   
+body{
+    background-image:linear-gradient(#DBA45C, #E48C86, #000000);
+    background-attachment: fixed;
 }
 .top_row{
     display:flex;
@@ -10,7 +11,10 @@
     padding-bottom: 3rem;
 }
 h1{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Prompt', sans-serif;
+    font-family: 'Righteous', cursive;
+    font-family: 'Russo One', sans-serif;
     font-stretch:ultra-expanded;
     font-size:5rem;
     color:white;
@@ -78,9 +82,8 @@ h1{
 }
 .card_lineup{
     display:flex;
-    margin: 1rem auto 0 auto;
-    width:min-content;
-    margin-left:18%
+    margin: 3rem auto 0 auto;
+    margin-left:18%;
 }
 .arrow_button{
     cursor:pointer;

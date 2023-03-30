@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import "../../styles/card.scss";
+
 
 const PlaceholderCard = () =>{
     return(
@@ -26,6 +28,7 @@ const PlaceholderCard = () =>{
         ></a>
       </div>
     </div>
+    
   );
 };
 

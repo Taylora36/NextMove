@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import ScrollToTop from "./components/scrollToTop";
 
 import { Home } from "./pages/Home.jsx";
@@ -16,19 +16,20 @@ const Layout = () => {
   const basename = process.env.BASENAME || "";
 
   return (
-    <div>
+    <>
       <BrowserRouter basename={basename}>
         <ScrollToTop>
           <Sidebar />
           <Locations />
           <Routes>
             <Route element={<Home />} path="/" />
+            <Route element={<Home />} path="/test" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
           <Footer />
         </ScrollToTop>
       </BrowserRouter>
-    </div>
+    </>
   );
 };
 
