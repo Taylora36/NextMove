@@ -1,6 +1,7 @@
-body{
+.locations_container{
     background-image:linear-gradient(#DBA45C, #E48C86, #000000);
     background-attachment: fixed;
+    height: 100%;
 }
 .top_row{
     display:flex;
