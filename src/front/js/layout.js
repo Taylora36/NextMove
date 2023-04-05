@@ -1,10 +1,11 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import ScrollToTop from "./components/scrollToTop";
 import injectContext from "./store/appContext";
 
 import Home from "./pages/Home.jsx";
 import { Footer } from "./components/Footer.jsx";
+import { Locations } from "./pages/Locations.jsx";
 
 const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -17,6 +18,8 @@ const Layout = () => {
         <ScrollToTop>
           <Routes>
             <Route element={<Home />} path="/" />
+            <Route element={<Home />} path="/test" />
+            <Route element={<Locations />} path="/locations" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
           <Footer />
