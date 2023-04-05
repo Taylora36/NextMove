@@ -1,7 +1,274 @@
-/*
-    home.css: This website contains selectors only used in home.css
+.landing__container,
+.about__container {
+  min-height: 100vh;
+  width: 90vw;
+  max-width: 118.75rem;
+  margin: 0rem auto;
+}
 
-    All pages share the styles on index.css but you should create 
-    one more css for each page that will contain the selected used 
-    on that page only (the ones not reused in other pages).
-*/
+.contact__container {
+  min-height: 90vh;
+  width: 90vw;
+  max-width: 118.75rem;
+  margin: 0rem auto;
+}
+
+.landing__container {
+  background: linear-gradient(0.9turn, #dba45c, #e09871, #e48c86);
+  clip-path: polygon(0 0%, 100% 0, 100% 70%, 0 95%);
+}
+
+.blob__left {
+  height: 41rem;
+  width: 41rem;
+  position: absolute;
+  top: -18rem;
+  left: -18rem;
+  z-index: -1;
+  background: linear-gradient(0.58turn, #a8504a, #c66e68, #e48c86);
+  border-radius: 50%;
+}
+
+.hero__container {
+  height: 38rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.hero__text__container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+}
+
+.text__heading {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #333333;
+  max-width: 37.5rem;
+}
+
+.text__brand {
+  font-size: clamp(4rem, 5vw, 4.5rem);
+  color: #f13d3d;
+}
+
+.text__slogan {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  max-width: 31.25rem;
+  color: #333333;
+}
+
+.hero__bannerImage__container {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta__button,
+.submit__button {
+  background-color: #fbeee0;
+  border: 2px solid #422800;
+  border-radius: 5px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 0 1.2rem;
+  line-height: 3rem;
+  user-select: none;
+  touch-action: manipulation;
+  transition: all 0.3s ease 0s;
+}
+
+.cta__button:hover,
+.submit__button:hover {
+  color: #e84a4a;
+  background-color: #ffdbb580;
+}
+
+.cta__button:active,
+.submit__button:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+/* Section 1.5: CTA to about section */
+.about__cta {
+  position: relative;
+  bottom: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.6rem;
+  padding-bottom: 6rem;
+  text-transform: capitalize;
+}
+
+.arrow__down:hover {
+  color: #333333;
+}
+
+/* Section 2: About */
+.about__text__container {
+  display: flex;
+  justify-content: center;
+}
+
+.text__about {
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: bold;
+  padding-top: 5rem;
+}
+
+.text__green {
+  color: #43be58;
+}
+
+.about__card__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-top: 6rem;
+}
+
+.about__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 20rem;
+  height: 15rem;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.about__card__header {
+  text-align: center;
+}
+
+.about__icon {
+  font-size: 2.5rem;
+}
+
+.about__card__text {
+  font-size: 1.5rem;
+}
+
+/* Section 3: Contact */
+.contact__container {
+  display: flex;
+  height: 50%;
+  background: linear-gradient(0.9turn, #dba45c, #e09871, #e48c86);
+  clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%);
+  flex-direction: row;
+  align-items: center;
+  padding: 2rem;
+  margin-bottom: 6rem;
+}
+
+.contact__text__container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.text__contact {
+  color: #333333;
+  font-weight: bold;
+}
+
+.text__regular {
+  width: 82%;
+  text-align: center;
+}
+
+.contact__input__container {
+  width: 50%;
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 24px 30px, rgba(0, 0, 0, 0.22) 0px 6px 20px;
+  border-radius: 0.3rem;
+  background: linear-gradient(0.9turn, #e48c86, #e09871, #dba45c);
+}
+
+label {
+  font-weight: bold;
+  color: #333333;
+}
+
+.contact__input,
+.contact__button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.input__field,
+.submit__button {
+  height: 5%;
+  padding: 0.3rem;
+  border: none;
+  border-bottom: 1px solid #33333350;
+  border-radius: 0.3rem;
+}
+
+.input__field {
+  width: 60%;
+}
+
+.contact__button {
+  justify-content: flex-end;
+}
+
+.submit__button {
+  width: 30%;
+  line-height: 1.5rem;
+}
+
+/* Scrollbar */
+body::-webkit-scrollbar {
+  width: 1rem;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #d6512991;
+}
+
+/* Animations */
+.animate__bounce {
+  line-height: 3rem;
+  font-size: 4rem;
+  color: #dba45c;
+  animation: bounce 0.5s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 15px, 0);
+  }
+}

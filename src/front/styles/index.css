@@ -1,4 +1,26 @@
-/* 
-    General Styles used on every website (Don't Repeat Yourself)
-*/
-@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Prompt:wght@500&family=Righteous&family=Russo+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit&family=Prompt:wght@500&family=Righteous&family=Russo+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+li,
+a {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #000000;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  background-color: #f6eee3;
+}
