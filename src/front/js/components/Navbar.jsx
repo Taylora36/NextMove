@@ -25,7 +25,7 @@ const Navbar = () => {
             <a href="#contact">Contact</a>
           </li>
           <li>
-            <NavLink to="/about">About</NavLink>
+            <NavLink to="/explore">About</NavLink>
           </li>
           <li>
             <NavLink to="/login" className="login__button no__effect">
