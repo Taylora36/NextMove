@@ -8,27 +8,37 @@ export const Card = (props) => {
   const { actions } = useContext(Context);
   return (
     <div class="cards">
-  <div class="card">
-    <h2><a href="#">Title</a></h2>
-    <p>Some article description stuff.</p>
-  </div>
-  <div class="card">
-    <h2><a href="#">Title</a></h2>
-    <p>Some article description stuff.</p>
-  </div>
-  <div class="card">
-    <h2><a href="#">Title</a></h2>
-    <p>Some article description stuff.</p>
-  </div>
-  <div class="card">
-    <h2><a href="#">Title</a></h2>
-    <p>Some article description stuff.</p>
-  </div>
-  <div class="card">
-    <h2><a href="#">Title</a></h2>
-    <p>Some article description stuff.</p>
-  </div>
-</div>
+      <div class="card">
+        <h2>
+          <a href="#">Title</a>
+        </h2>
+        <p>Some article description stuff.</p>
+      </div>
+      <div class="card">
+        <h2>
+          <a href="#">Title</a>
+        </h2>
+        <p>Some article description stuff.</p>
+      </div>
+      <div class="card">
+        <h2>
+          <a href="#">Title</a>
+        </h2>
+        <p>Some article description stuff.</p>
+      </div>
+      <div class="card">
+        <h2>
+          <a href="#">Title</a>
+        </h2>
+        <p>Some article description stuff.</p>
+      </div>
+      <div class="card">
+        <h2>
+          <a href="#">Title</a>
+        </h2>
+        <p>Some article description stuff.</p>
+      </div>
+    </div>
     // <div className="_container">
     //   <div className="city_image">
     //     <img src="" className="card-img-top" alt="..." />

@@ -71,7 +71,7 @@ const Home = () => {
               <TbMapSearch className="about__icon" />
             </p>
             <p className="about__card__text">
-              Tailored search options just for you!
+              Tailored search options just htmlFor you!
             </p>
           </div>
         </div>
@@ -87,7 +87,7 @@ const Home = () => {
         </div>
         <div className="contact__input__container">
           <div className="contact__input">
-            <label for="name">Name</label>
+            <label htmlFor="name">Name</label>
             <input
               className="input__field"
               id="name"
@@ -97,7 +97,7 @@ const Home = () => {
             />
           </div>
           <div className="contact__input">
-            <label for="email">Email</label>
+            <label htmlFor="email">Email</label>
             <input
               className="input__field"
               id="email"
@@ -107,7 +107,7 @@ const Home = () => {
             />
           </div>
           <div className="contact__input">
-            <label for="tel">Phone #</label>
+            <label htmlFor="tel">Phone #</label>
             <input
               className="input__field"
               id="phone"
@@ -116,7 +116,7 @@ const Home = () => {
             />
           </div>
           <div className="contact__input">
-            <label for="message">Anything else?</label>
+            <label htmlFor="message">Anything else?</label>
             <textarea
               className="input__field"
               name="message"

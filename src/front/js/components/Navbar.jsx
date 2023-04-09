@@ -1,16 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import LogoSVG from "./LogoSVG.jsx";
-import { TfiAngleDoubleDown } from "react-icons/tfi";
 import "../../styles/navbar.css";
 
 const Navbar = () => {
-  const [showNav, setShowNav] = useState(false);
-
-  const handleShowNav = () => {
-    setShowNav(!showNav);
-  };
-
   return (
     <header>
       <NavLink to="/">
@@ -25,7 +18,7 @@ const Navbar = () => {
             <a href="#contact">Contact</a>
           </li>
           <li>
-            <NavLink to="/explore">About</NavLink>
+            <NavLink to="/explore">Explore</NavLink>
           </li>
           <li>
             <NavLink to="/login" className="login__button no__effect">
