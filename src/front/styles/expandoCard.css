@@ -1,0 +1,30 @@
+.small {
+    width: 15rem;
+    height: 10rem;
+    transition: width 1s, height 1s;
+    margin: 1rem auto;
+  }
+  
+  .large {
+    isolation: isolate;
+    width: 25rem;
+    height: 15rem;
+    transition: width 1s, height 1s;
+    margin: 1rem auto;
+  }
+  
+  .modalOff {
+    width: 25rem;
+    height: 15rem;
+    transition: background-color 1s;
+  }
+  
+  .modalOn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    background-color: #00000088;
+    transition: background-color 1s;
+  }
