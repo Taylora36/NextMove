@@ -5,7 +5,8 @@ import injectContext from "./store/appContext";
 
 import Home from "./pages/Home.jsx";
 import { Footer } from "./components/Footer.jsx";
-import { Locations } from "./pages/Locations.jsx";
+import { Explore } from "./pages/Explore.jsx";
+import { Login } from "./pages/Login.jsx";
 
 const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -18,8 +19,8 @@ const Layout = () => {
         <ScrollToTop>
           <Routes>
             <Route element={<Home />} path="/" />
-            <Route element={<Home />} path="/test" />
-            <Route element={<Locations />} path="/locations" />
+            <Route element={<Login />} path="/login" />
+            <Route element={<Explore />} path="/explore" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
           <Footer />
