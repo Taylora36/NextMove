@@ -1,12 +1,13 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import { Sidebar } from "../components/Sidebar.jsx";
 import { Card } from "../components/Card.jsx";
-import "../../styles/locations.css";
+import ExpandoCard from "../components/ExpandoCard.jsx";
+import "../../styles/explore.css";
 import { BsFilter } from "react-icons/bs";
 import { IoIosArrowForward } from "react-icons/io";
 
-export const Locations = () => {
+export const Explore = () => {
   return (
     <div className="locations_container">
       <div className="top_row">

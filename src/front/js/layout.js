@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import ScrollToTop from "./components/scrollToTop";
 import injectContext from "./store/appContext";
-
+import { Sidebar } from "./components/Sidebar.jsx";
 import Home from "./pages/Home.jsx";
 import { Footer } from "./components/Footer.jsx";
 import { Explore } from "./pages/Explore.jsx";
@@ -17,6 +17,7 @@ const Layout = () => {
     <>
       <BrowserRouter basename={basename}>
         <ScrollToTop>
+          <Sidebar />
           <Routes>
             <Route element={<Home />} path="/" />
             <Route element={<Login />} path="/login" />
