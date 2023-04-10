@@ -19,10 +19,10 @@ export const Footer = () => {
               <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <a href="contact">Contact</a>
+              <a href="#contact">Contact</a>
             </li>
             <li>
-              <NavLink to="/about">About</NavLink>
+              <NavLink to="/explore">Explore</NavLink>
             </li>
             <li>
               <NavLink to="/login" className="login__button no__effect">

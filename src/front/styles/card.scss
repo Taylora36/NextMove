@@ -28,27 +28,27 @@
   background-color: #00000088;
   transition: background-color 1s;
 }
- 
-  .cards {
-    display: flex;
+
+.cards {
+  display: flex;
+}
+.card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 3px 3px 12px 2px rgba(black, 0.6);
+  transition: 0.2s;
+}
+.card:not(:first-child) {
+  margin-left: -2rem;
+}
+.card:not(:last-child):hover,
+.card:not(:last-child):focus-within {
+  transform: translateY(-1rem);
+  ~ .card {
+    transform: translateX(2rem);
   }
-  .card {
-    background: white;
-    border-radius: 1rem;
-    padding: 1.5rem;
-    box-shadow: 3px 3px 12px 2px rgba(black, 0.6);
-    transition: 0.2s;
-  }
-  .card:not(:first-child) {
-    margin-left: -2rem;
-  }
-  .card:not(:last-child):hover,
-  .card:not(:last-child):focus-within {
-    transform: translateY(-1rem);
-    ~ .card {
-      transform: translateX(2rem);
-    }
-  }
+}
 .button-74 {
   background-color: #fbeee0;
   border: 2px solid #422800;
