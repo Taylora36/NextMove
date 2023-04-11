@@ -1,8 +1,26 @@
+.cards{
+  display:flex;
+}
+.single_card{
+  border-radius: 1rem;
+  box-shadow: 3px 3px 12px 2px rgba(black, 0.6);
+  transition: 0.2s;
+  justify-content:space-between;
+  color: #A1A1AA;
+
+  background-color: rgba(255, 255, 255, .015);
+  border-color: rgba(255, 255, 255, 0.1);
+}
 .small {
   width: 15rem;
   height: 10rem;
   transition: width 1s, height 1s;
-  margin: 1rem auto;
+  background: black;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 3px 3px 12px 2px rgba(black, 0.6);
+  transition: 0.2s;
+  
 }
 
 .large {
@@ -14,9 +32,17 @@
 }
 
 .modalOff {
-  width: 25rem;
+  width: 18rem;
   height: 15rem;
   transition: background-color 1s;
+  background: white;
+  box-shadow: 3px 3px 12px 2px rgba(black, 0.6);
+  transition: 0.2s;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  background-color: #282c34;
+  background: linear-gradient(0deg, rgba(40,44,52,1) 0%, rgba(17,0,32,.5) 100%);
+  box-shadow: 0 7px 20px 5px #00000088;
 }
 
 .modalOn {
@@ -29,25 +55,22 @@
   transition: background-color 1s;
 }
 
-.cards {
-  display: flex;
-}
-.card {
-  background: white;
-  border-radius: 1rem;
-  padding: 1.5rem;
-  box-shadow: 3px 3px 12px 2px rgba(black, 0.6);
-  transition: 0.2s;
-}
-.card:not(:first-child) {
+
+.single_card:not(:first-child) {
   margin-left: -2rem;
 }
-.card:not(:last-child):hover,
-.card:not(:last-child):focus-within {
+.single_card:not(:last-child):hover,
+.single_card:not(:last-child):focus-within {
   transform: translateY(-1rem);
-  ~ .card {
+  ~ .single_card {
     transform: translateX(2rem);
   }
+}
+.card_text p:hover{
+  color:#e84a4a;
+}
+.card_text h3:hover{
+  color:#e84a4a;
 }
 .button-74 {
   background-color: #fbeee0;

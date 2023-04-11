@@ -1,5 +1,6 @@
 .locations_container{
-    background-image:linear-gradient(#DBA45C, #E48C86, #000000);
+    /* background-image:linear-gradient(#DBA45C, #E48C86, #000000); */
+    background-color:gainsboro;
     background-attachment: fixed;
     height: 100%;
 }
@@ -18,19 +19,18 @@ h1{
     font-family: 'Russo One', sans-serif;
     font-stretch:ultra-expanded;
     font-size:5rem;
-    color:white;
+    color:#282c34;
 }
 .filter_button{
     position: absolute;
     right: 1rem;
     top: 1rem;
-    background-color:black;
-
+    background-color: #282c34;
+  background: linear-gradient(0deg, rgba(40,44,52,1) 0%, rgba(17,0,32,.5) 100%);
   align-items: center;
-  background-color:gray;
   border: 0 solid #E2E8F0;
   box-shadow: 0 6px 1px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  color: #1A202C;
+  color: black;
   display: inline-flex;
   font-family: Inter, sans-serif;
   font-size: 20px;
@@ -61,13 +61,14 @@ h1{
     height:35px;
 
 
-   border: 2px solid ;
+   border: 2px solid;
    font-size: 16px;
    background-color: white;
    padding: 2px 40px 2px 10px;
 }
 .search_button{
-    background-color:darkred;
+    background-color: #282c34;
+  background: linear-gradient(0deg, rgba(40,44,52,1) 0%, rgba(17,0,32,.5) 100%);
     color: #f2f2f2;
     padding: 7px 10px;
     font-size: 12px;
@@ -81,6 +82,10 @@ h1{
     top: 0px;
     right: 0px;
 }
+.search_button:hover{
+        background:#e84a4a;
+        color:black;
+}
 .card_lineup{
     display:flex;
     margin: 3rem auto 0 auto;
@@ -91,4 +96,8 @@ h1{
     font-size:100px;
     border:none;
     background:transparent;
+}
+.arrow_button:hover{
+  color:#e84a4a;
+
 }

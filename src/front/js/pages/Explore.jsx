@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { Sidebar } from "../components/Sidebar.jsx";
 import { Card } from "../components/Card.jsx";
 import ExpandoCard from "../components/ExpandoCard.jsx";
-import "../../styles/explore.css";
+import "../../styles/explore.scss";
 import { BsFilter } from "react-icons/bs";
 import { IoIosArrowForward } from "react-icons/io";
 

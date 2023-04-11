@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from "prop-types";
-import "../../styles/expandoCard.css";
 
 const ExpandoCard = () => {
   const [isSmall, setIsSmall] = useState(true);
