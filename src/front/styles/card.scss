@@ -1,26 +1,21 @@
 .cards{
   display:flex;
+  margin-top:2rem;
+  place-items: center;
 }
 .single_card{
   border-radius: 1rem;
-  box-shadow: 3px 3px 12px 2px rgba(black, 0.6);
-  transition: 0.2s;
-  justify-content:space-between;
   color: #A1A1AA;
-
-  background-color: rgba(255, 255, 255, .015);
-  border-color: rgba(255, 255, 255, 0.1);
 }
 .small {
-  width: 15rem;
-  height: 10rem;
+  height: 8rem;
   transition: width 1s, height 1s;
   background: black;
   border-radius: 1rem;
   padding: 1rem;
+  margin-top:8rem;
   box-shadow: 3px 3px 12px 2px rgba(black, 0.6);
   transition: 0.2s;
-  
 }
 
 .large {
@@ -32,15 +27,13 @@
 }
 
 .modalOff {
-  width: 18rem;
-  height: 15rem;
+  width: 16rem;
+  height: 18rem;
   transition: background-color 1s;
-  background: white;
   box-shadow: 3px 3px 12px 2px rgba(black, 0.6);
   transition: 0.2s;
   border-radius: 1rem;
   padding: 1.5rem;
-  background-color: #282c34;
   background: linear-gradient(0deg, rgba(40,44,52,1) 0%, rgba(17,0,32,.5) 100%);
   box-shadow: 0 7px 20px 5px #00000088;
 }
@@ -57,14 +50,17 @@
 
 
 .single_card:not(:first-child) {
-  margin-left: -2rem;
+  margin-left: -1rem;
 }
-.single_card:not(:last-child):hover,
-.single_card:not(:last-child):focus-within {
-  transform: translateY(-1rem);
-  ~ .single_card {
-    transform: translateX(2rem);
-  }
+
+.single_card .modalOff:hover {
+transform: translateY(-2rem);
+transition: 0.4s ease-out;
+}
+
+.single_card:hover ~ .single_card {
+left: 2rem;
+transition: 0.4s ease-out;
 }
 .card_text p:hover{
   color:#e84a4a;
