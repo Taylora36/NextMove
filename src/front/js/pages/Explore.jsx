@@ -8,6 +8,13 @@ import { BsFilter } from "react-icons/bs";
 import { IoIosArrowForward } from "react-icons/io";
 
 export const Explore = () => {
+  const { store, actions } = useContext(Context);
+
+  const testState = () => {
+    actions.getStateBatch();
+    console.log(store.stateData);
+  };
+
   return (
     <div className="locations_container">
       <div className="top_row">
@@ -30,11 +37,22 @@ export const Explore = () => {
         </button>
       </form>
       <div className="card_lineup">
-        <Card />
+        <div className="cards">
+          {store.stateData.map((state, index) => {
+            return <Card key={index} state={state} />;
+          })}
+        </div>
         <button className="arrow_button">
           <IoIosArrowForward />
         </button>
       </div>
+
+      <button
+        style={{ position: "absolute", left: "150px" }}
+        onClick={testState}
+      >
+        Test
+      </button>
     </div>
   );
 };
