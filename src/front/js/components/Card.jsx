@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
 import { Modal } from "./ExpandoCard.jsx";
 import { AiOutlineStar } from "react-icons/ai";
@@ -10,56 +9,21 @@ export const Card = (props) => {
   const [isSmall, setIsSmall] = useState(true);
 
   return (
-    <div className="cards">
+    <div
+      onClick={() => setIsSmall(!isSmall)}
+      className={isSmall ? "modalOff" : "modalOn"}
+    >
       <div
         onClick={() => setIsSmall(!isSmall)}
-        className={isSmall ? "modalOff" : "modalOn"}
+        className={isSmall ? "card small" : "card large"}
       >
-        <div
-          onClick={() => setIsSmall(!isSmall)}
-          className={isSmall ? "card small" : "card large"}
-        >
-          <div className="card">
-            <h2>
-              <a href="#">Title</a>
-            </h2>
-            <p>Some article description stuff.</p>
-          </div>
+        <div className="card">
+          <h2>
+            <a href="#">{props.state.selectedProfile.label}</a>
+          </h2>
+          <p>Some article description stuff.</p>
         </div>
-      </div>
-
-      <div className="card">
-        <h2>
-          <a href="#">Title</a>
-        </h2>
-        <p>Some article description stuff.</p>
-      </div>
-      <div className="card">
-        <h2>
-          <a href="#">Title</a>
-        </h2>
-        <p>Some article description stuff.</p>
-      </div>
-      <div className="card">
-        <h2>
-          <a href="#">Title</a>
-        </h2>
-        <p>Some article description stuff.</p>
-      </div>
-      <div className="card">
-        <h2>
-          <a href="#">Title</a>
-        </h2>
-        <p>Some article description stuff.</p>
       </div>
     </div>
   );
-};
-
-Card.propTypes = {
-  name: PropTypes.string,
-  population: PropTypes.string,
-  state: PropTypes.string,
-  id: PropTypes.number,
-  url: PropTypes.string,
 };
