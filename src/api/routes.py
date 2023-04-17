@@ -15,10 +15,10 @@ api = Blueprint('api', __name__)
 
 # Hard-Coded state names & fips codes
 state_abbr = {
-    'AK': 'Alaska',
     'AL': 'Alabama',
-    'AR': 'Arkansas',
+    'AK': 'Alaska',
     'AZ': 'Arizona',
+    'AR': 'Arkansas',
     'CA': 'California',
     'CO': 'Colorado',
     'CT': 'Connecticut',

@@ -60,9 +60,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 
     actions: {
       getStateData: (url_state) => {
-        return fetch(
-          `${process.env.BACKEND_URL}/api/highlights/${url_state}`
-        ).then((resp) => resp.json());
+        return (
+          fetch(`${process.env.BACKEND_URL}/api/highlights/${url_state}`)
+            // .then(
+            //   console.log(
+            //     `${process.env.BACKEND_URL}/api/highlights/${url_state}`
+            //   )
+            // )
+            .then((resp) => resp.json())
+        );
       },
 
       getStateBatch: (count = 5) => {
