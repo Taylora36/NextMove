@@ -43,16 +43,16 @@ export const Explore = () => {
           })}
         </div>
         <button className="arrow_button">
-          <IoIosArrowForward />
+          <IoIosArrowForward onClick={testState} />
         </button>
       </div>
 
-      <button
+      {/* <button
         style={{ position: "absolute", left: "150px" }}
         onClick={testState}
       >
         Test
-      </button>
+      </button> */}
     </div>
   );
 };
