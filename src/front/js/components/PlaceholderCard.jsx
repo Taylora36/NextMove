@@ -35,7 +35,7 @@ const PlaceholderCard = () =>{
 const DataCard = () => {
   return (
     <div className="card">
-      <img src="http://placekitten.com/500" class="card-img-top" alt="..." />
+      <img src="http://placekitten.com/500" className="card-img-top" alt="..." />
 
       <div className="card-body">
         <h5 className="card-title">Card title</h5>
