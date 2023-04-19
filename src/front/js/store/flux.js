@@ -60,31 +60,52 @@ const getState = ({ getStore, getActions, setStore }) => {
 
     actions: {
       getStateData: (url_state) => {
-        return fetch(
-          `${process.env.BACKEND_URL}/api/highlights/${url_state}`
-        ).then((resp) => resp.json());
+        if (url_state) {
+          return fetch(
+            `${process.env.BACKEND_URL}/api/highlights/${url_state}`
+          ).then((resp) => resp.json());
+        }
       },
 
       getStateBatch: (count = 5) => {
         const allStates = getStore().allStates;
         let stateData = getStore().stateData;
+        if (stateData.length >= 51) {
+          return;
+        }
         const reqPromise = [];
         for (let i = stateData.length; i < stateData.length + count; i++) {
-          reqPromise.push(getActions().getStateData(allStates[i].abbreviation));
+          reqPromise.push(
+            getActions().getStateData(allStates[i]?.abbreviation)
+          );
         }
 
-        Promise.all(reqPromise).then((values) => {
-          for (let state of values) {
-            stateData = getStore().stateData;
-            if (
-              !stateData
-                .map((i) => i.selectedProfile.label)
-                .includes(state.resp.selectedProfile.label)
-            ) {
-              setStore({ stateData: [...stateData, state.resp] });
+        Promise.all(reqPromise)
+          .then((values) => {
+            for (let state of values) {
+              stateData = getStore().stateData;
+              if (
+                !stateData
+                  .map((i) => i.selectedProfile.label)
+                  .includes(state.resp.selectedProfile.label)
+              ) {
+                setStore({ stateData: [...stateData, state.resp] });
+              }
             }
-          }
-        });
+          })
+          .catch(() =>
+            setStore({
+              stateData: [
+                ...stateData,
+                {
+                  selectedProfile: {
+                    label: null,
+                  },
+                  highlights: [],
+                },
+              ],
+            })
+          );
       },
     },
   };
