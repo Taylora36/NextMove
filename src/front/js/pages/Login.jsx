@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 // Styles and/or assets
@@ -8,13 +9,21 @@ export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { actions } = useContext(Context);
+  const { store, actions } = useContext(Context);
+
+  const navigate = useNavigate();
 
   const token = sessionStorage.getItem("token");
-  console.log("This is your token", token);
+
+  const handleLogin = async () => {
+    await actions.handle_Login_Click(email, password);
+    if (store.accessToken) {
+      navigate("/explore");
+    }
+  };
 
   return (
-    <form className="login__container">
+    <div className="login__container">
       <h1 className="text__heading">Login</h1>
       <div className="field">
         <label htmlFor="email">Email</label>
@@ -25,7 +34,7 @@ export const Login = () => {
           placeholder="youremail@email.com"
           required
           value={email}
-          onChange={() => setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
         />
       </div>
       <div className="field">
@@ -37,16 +46,12 @@ export const Login = () => {
           placeholder="secret-password"
           required
           value={password}
-          onChange={() => setPassword(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)}
         />
       </div>
-      <button
-        type="submit"
-        className="login__btn"
-        onClick={() => actions.handle_Login_Click(password)}
-      >
+      <button type="submit" className="login__btn" onClick={handleLogin}>
         Login
       </button>
-    </form>
+    </div>
   );
 };

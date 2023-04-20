@@ -56,6 +56,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       ],
 
       stateData: [],
+      accessToken: "",
     },
 
     actions: {
@@ -108,8 +109,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           );
       },
 
-      handle_Login_Click: (password) => {
-        console.log(password);
+      handle_Login_Click: (email, password) => {
         const options = {
           method: "POST",
           headers: {
@@ -120,15 +120,14 @@ const getState = ({ getStore, getActions, setStore }) => {
             password: password,
           }),
         };
-        fetch(
-          "https://3000-taylora36-nextmove-vmg9vgbafng.ws-us93.gitpod.io/api/token",
-          options
-        )
+        return fetch(`${process.env.BACKEND_URL}/api/login`, options)
           .then((resp) => {
             if (resp.status === 200) return resp.json();
             else alert("An error has occurred!");
           })
-          .then((data) => {})
+          .then((data) => {
+            setStore({ accessToken: data.access_token });
+          })
           .catch((error) => {
             console.error("There was an error", error);
           });
