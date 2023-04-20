@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
-import { Modal } from "./ExpandoCard.jsx";
 import { AiOutlineStar } from "react-icons/ai";
 import "../../styles/card.scss";
 

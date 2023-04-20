@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import { Sidebar } from "../components/Sidebar.jsx";
 import { Card } from "../components/Card.jsx";
-import ExpandoCard from "../components/ExpandoCard.jsx";
 import "../../styles/explore.css";
 import { GoTriangleDown } from "react-icons/go";
 import { IoIosArrowForward } from "react-icons/io";
@@ -14,6 +13,27 @@ export const Explore = () => {
     actions.getStateBatch();
     console.log(store.stateData);
   };
+
+  const states = [
+    {
+      name: "New York"
+    },
+    {
+      name: "New Hampshire"
+    },
+    {
+      name: "New Mexico"
+    },
+    {
+      name: "Nevada"
+    }
+  ]
+  
+  const findState = (stateName) => {
+    return states.filter(item => item.name.includes(stateName))[0]
+  }
+  
+  console.log(findState("Nev"))
   
   return (
     <div className="locations_container">
@@ -24,9 +44,26 @@ export const Explore = () => {
               <GoTriangleDown />
           </button>
           <div className="dropdown_content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+          Choose city
+  <ul class="checkbox-dropdown-list">
+    <li>
+      <label>
+        <input type="checkbox" value="Vejle" name="city" />Milwaukee</label>
+    </li>
+    <li>
+      <label>
+        <input type="checkbox" value="Horsens" name="city" />Denver</label>
+    </li>
+    <li>
+      <label>
+        <input type="checkbox" value="Kolding" name="city" />Boston</label>
+    </li>
+    <li>
+      <label>
+        <input type="checkbox" value="Kolding" name="city" />LA</label>
+    </li>
+    
+  </ul>
           </div>
           </div>
         </div>
@@ -52,13 +89,6 @@ export const Explore = () => {
           <IoIosArrowForward onClick={testState} />
         </button>
       </div>
-
-      <button
-        style={{ position: "absolute", left: "150px" }}
-        onClick={testState}
-      >
-        Test
-      </button> */}
     </div>
   );
 };

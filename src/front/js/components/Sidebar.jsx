@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "../../styles/sidebar.css";
 import { AiFillCar } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
@@ -20,29 +21,29 @@ export const Sidebar = (props) => {
           </a>
         </li>
         <li className="sidebar-item">
-          <a href="#" className="sidebar-link">
+          <NavLink to="/" href="#" className="sidebar-link">
             <span className="sidebar-icon">
               <AiFillCar />
             </span>
             <span className="link-text">Home</span>
-          </a>
+          </NavLink>
         </li>
         <li className="sidebar-item">
-          <a href="#" className="sidebar-link">
+          <NavLink to="/explore" href="#" className="sidebar-link">
             <span className="sidebar-icon">
               <BiSearch />
             </span>
             <span className="link-text">Search</span>
-          </a>
+          </NavLink>
         </li>
         <li className="sidebar-item">
-          <a href="#" className="sidebar-link">
+          <NavLink to="/compare" href="#" className="sidebar-link">
             <span className="sidebar-icon">
               <HiSquare3Stack3D />
             </span>
             <span className="link-text">Compare</span>
             <svg>...</svg>
-          </a>
+          </NavLink>
         </li>
         <li className="sidebar-item">
           <a href="#" className="sidebar-link">

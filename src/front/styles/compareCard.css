@@ -1,0 +1,23 @@
+.compare_card {
+    width: 17rem;
+    height: 27rem;
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    background-image: linear-gradient(144deg,#DB645C, #E09871 50%,#DBA45C);
+}
+  
+.card_content {
+    background: rgb(51, 56, 65);
+    border-radius: 17px;
+    width: 100%;
+    height: 100%;
+}
+.city_name{
+    text-align:center;
+    padding-top:1rem;
+}
+.city_data{
+    margin-top:3rem;
+    margin-left:1rem;
+}

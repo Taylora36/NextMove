@@ -98,7 +98,7 @@ def get_state_highlights(url_state):
         resp=request.json()
     )
 
-@app.route("/login", methods=["POST"])
+@api.route("/login", methods=["POST"])
 def login():
     email = request.json.get("email", None)
     password = request.json.get("pass", None)
