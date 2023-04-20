@@ -12,57 +12,56 @@ export const Card = (props) => {
   return (
     <div className="cards">
       <div className="single_card">
-      <div
-        onClick={() => setIsSmall(!isSmall)}
-        className={isSmall ? "modalOff" : "modalOn"}
-      >
         <div
           onClick={() => setIsSmall(!isSmall)}
-          className={isSmall ? "card small" : "card large"}
+          className={isSmall ? "modalOff" : "modalOn"}
         >
-          <div className="card_text">
-          <h3>State</h3>
-          <p>Population</p>
-          <p>Avg Income</p>
+          <div
+            onClick={() => setIsSmall(!isSmall)}
+            className={isSmall ? "card small" : "card large"}
+          >
+            <div className="card_text">
+              <h3>State</h3>
+              <p>Population</p>
+              <p>Avg Income</p>
+            </div>
           </div>
-        </div>
         </div>
       </div>
       <div className="single_card">
-      <div
-        onClick={() => setIsSmall(!isSmall)}
-        className={isSmall ? "modalOff" : "modalOn"}
-      >
         <div
           onClick={() => setIsSmall(!isSmall)}
-          className={isSmall ? "card small" : "card large"}
+          className={isSmall ? "modalOff" : "modalOn"}
         >
-          <div className="card_text">
-          <h3>State</h3>
-          <p>Population</p>
-          <p>Avg Income</p>
+          <div
+            onClick={() => setIsSmall(!isSmall)}
+            className={isSmall ? "card small" : "card large"}
+          >
+            <div className="card_text">
+              <h3>State</h3>
+              <p>Population</p>
+              <p>Avg Income</p>
+            </div>
           </div>
         </div>
-      </div>
       </div>
       <div className="single_card">
-      <div
-        onClick={() => setIsSmall(!isSmall)}
-        className={isSmall ? "modalOff" : "modalOn"}
-      >
         <div
           onClick={() => setIsSmall(!isSmall)}
-          className={isSmall ? "card small" : "card large"}
+          className={isSmall ? "modalOff" : "modalOn"}
         >
-          <div className="card_text">
-          <h3>State</h3>
-          <p>Population</p>
-          <p>Avg Income</p>
+          <div
+            onClick={() => setIsSmall(!isSmall)}
+            className={isSmall ? "card small" : "card large"}
+          >
+            <div className="card_text">
+              <h3>State</h3>
+              <p>Population</p>
+              <p>Avg Income</p>
+            </div>
           </div>
         </div>
       </div>
-      </div>
-      
 
       {/* <div className="card">
         <h2>
@@ -70,17 +69,23 @@ export const Card = (props) => {
         </h2>
         <p>Some article description stuff.</p>
       </div>
-      <div className="card">
-        <h2>
-          <a href="#">Title</a>
-        </h2>
-        <p>Some article description stuff.</p>
       </div>
-      <div className="card">
-        <h2>
-          <a href="#">Title</a>
-        </h2>
-        <p>Some article description stuff.</p>
+      <div className="single_card">
+      <div
+        onClick={() => setIsSmall(!isSmall)}
+        className={isSmall ? "modalOff" : "modalOn"}
+      >
+        <div
+          onClick={() => setIsSmall(!isSmall)}
+          className={isSmall ? "card small" : "card large"}
+        >
+          <div className="card_text">
+          <a href="#">{props.state.selectedProfile.label}</a>
+          <h3>State</h3>
+          <p>Population</p>
+          <p>Avg Income</p>
+          </div>
+        </div>
       </div>
       <div className="card">
         <h2>
@@ -90,12 +95,4 @@ export const Card = (props) => {
       </div> */}
     </div>
   );
-};
-
-Card.propTypes = {
-  name: PropTypes.string,
-  population: PropTypes.string,
-  state: PropTypes.string,
-  id: PropTypes.number,
-  url: PropTypes.string,
 };

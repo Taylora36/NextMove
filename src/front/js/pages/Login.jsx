@@ -7,6 +7,9 @@ export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const token = sessionStorage.getItem("token");
+  console.log("This is your token", token);
+
   const handleClick = () => {
     const options = {
       method: "POST",
