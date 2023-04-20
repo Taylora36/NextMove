@@ -107,6 +107,32 @@ const getState = ({ getStore, getActions, setStore }) => {
             })
           );
       },
+
+      handle_Login_Click: (password) => {
+        console.log(password);
+        const options = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: email,
+            password: password,
+          }),
+        };
+        fetch(
+          "https://3000-taylora36-nextmove-vmg9vgbafng.ws-us93.gitpod.io/api/token",
+          options
+        )
+          .then((resp) => {
+            if (resp.status === 200) return resp.json();
+            else alert("An error has occurred!");
+          })
+          .then((data) => {})
+          .catch((error) => {
+            console.error("There was an error", error);
+          });
+      },
     },
   };
 };

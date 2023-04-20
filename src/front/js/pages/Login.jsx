@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { Context } from "../store/appContext";
 
 // Styles and/or assets
 import "../../styles/login.css";
@@ -7,33 +8,10 @@ export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const { actions } = useContext(Context);
+
   const token = sessionStorage.getItem("token");
   console.log("This is your token", token);
-
-  const handleClick = () => {
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      }),
-    };
-    fetch(
-      "https://3000-taylora36-nextmove-vmg9vgbafng.ws-us93.gitpod.io/api/token",
-      options
-    )
-      .then((resp) => {
-        if (resp.status === 200) return resp.json();
-        else alert("An error has occurred!");
-      })
-      .then((data) => {})
-      .catch((error) => {
-        console.error("There was an error", error);
-      });
-  };
 
   return (
     <form className="login__container">
@@ -62,7 +40,11 @@ export const Login = () => {
           onChange={() => setPassword(e.target.value)}
         />
       </div>
-      <button type="submit" className="login__btn" onClick={handleClick}>
+      <button
+        type="submit"
+        className="login__btn"
+        onClick={() => actions.handle_Login_Click(password)}
+      >
         Login
       </button>
     </form>

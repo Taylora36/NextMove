@@ -80,6 +80,17 @@ def create_token():
     access_token = create_access_token(identity=email)
     return jsonify(access_token=access_token)
 
+@api.route("/login", methods=["POST"])
+def login():
+    email = request.json.get("email", None)
+    password = request.json.get("pass", None)
+    user = User.query.filter_by(email=email).one_or_none()
+    if user is not None:
+        if user.check_password_hash(password):
+            access_token = create_access_token(identity=email)
+            return jsonify(access_token=access_token)
+    return jsonify({"msg": "Invalid cedentials."}), 401
+
 @api.route("/highlights/<string:url_state>", methods=["GET"])
 def get_state_highlights(url_state):
     print('route reached')
@@ -97,14 +108,3 @@ def get_state_highlights(url_state):
     return jsonify(
         resp=request.json()
     )
-
-@app.route("/login", methods=["POST"])
-def login():
-    email = request.json.get("email", None)
-    password = request.json.get("pass", None)
-    user = User.query.filter_by(email=email).one_or_none()
-    if user is not None:
-        if user.check_password_hash(password):
-            access_token = create_access_token(identity=email)
-            return jsonify(access_token=access_token)
-    return jsonify({"msg": "Invalid cedentials."}), 401
