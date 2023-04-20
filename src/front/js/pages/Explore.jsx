@@ -14,27 +14,26 @@ export const Explore = () => {
     actions.getStateBatch();
     console.log(store.stateData);
   };
-  
+
   return (
     <div className="locations_container">
       <div className="_filter">
-      <div className="drop_down">
+        <div className="drop_down">
           <button className="filter_button" role="button">
             Filter
-              <GoTriangleDown />
+            <GoTriangleDown />
           </button>
           <div className="dropdown_content">
             <a href="#">Link 1</a>
             <a href="#">Link 2</a>
             <a href="#">Link 3</a>
           </div>
-          </div>
         </div>
+      </div>
       <div className="top_row">
         <div className="title_page">
           <h3 className="title_header">Choose your city...</h3>
         </div>
-        
       </div>
       <div className="search_bar">
         <input className="search" placeholder="Search city..." type="text" />
@@ -43,7 +42,7 @@ export const Explore = () => {
         </button>
       </div>
       <div className="card_lineup">
-      <div className="cards">
+        <div className="cards">
           {store.stateData.map((state, index) => {
             return <Card key={index} state={state} />;
           })}
@@ -52,13 +51,13 @@ export const Explore = () => {
           <IoIosArrowForward onClick={testState} />
         </button>
       </div>
-
       <button
         style={{ position: "absolute", left: "150px" }}
         onClick={testState}
       >
         Test
-      </button> */}
+      </button>{" "}
+      */}
     </div>
   );
 };
