@@ -44,7 +44,6 @@ export const Explore = () => {
               <GoTriangleDown />
           </button>
           <div className="dropdown_content">
-          Choose city
   <ul class="checkbox-dropdown-list">
     <li>
       <label>

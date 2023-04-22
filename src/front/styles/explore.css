@@ -20,7 +20,7 @@
     color: #282c34;
   }
   .filter_button {
-    background-color: #191919;
+    background: linear-gradient(0deg, rgb(39, 40, 40) 0%, rgba(8, 1, 15, 0.5) 100%);
     align-items: center;
     border: 0 solid #e2e8f0;
     color: white;
@@ -37,12 +37,10 @@
     -webkit-user-select: none;
     touch-action: manipulation;
   }
-  .filter_button:hover {
-    color: #e84a4a;
-  }
+
   ._filter {
     overflow: hidden;
-    background-color: #333;
+    background: linear-gradient(0deg, rgba(40,44,52,1) 0%, rgba(17,0,32,.5) 100%);
   }
   
   .drop_down {
@@ -55,7 +53,6 @@
     font-size: 16px;
     border: none;
     outline: none;
-    color: white;
     padding: 0.1rem 1rem;
     background-color: inherit;
     font-family: inherit;
@@ -85,9 +82,7 @@
     text-align: left;
   }
   
-  .dropdown_content a:hover {
-    background-color: #ddd;
-  }
+
   
   ._filter:hover .dropdown_content {
     display: block;
@@ -99,14 +94,12 @@
     margin: 0;
     padding: 0;
     position: absolute;
-    top: 100%; /* align the dropdown right below the dropdown text */
     border: inherit;
     border-top: none;
     left: -1px; /* align the dropdown to the left */
     right: -1px; /* align the dropdown to the right */
    
     height: 100px;
-    pointer-events: none; /* avoid mouse click events inside the dropdown */
 }
 .is-active .checkbox-dropdown-list {
     opacity: 1; /* display the dropdown */
