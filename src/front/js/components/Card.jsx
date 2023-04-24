@@ -11,23 +11,22 @@ export const Card = (props) => {
   return (
     <div className="cards">
       <div className="single_card">
-      <div
-        onClick={() => setIsSmall(!isSmall)}
-        className={isSmall ? "modalOff" : "modalOn"}
-      >
         <div
           onClick={() => setIsSmall(!isSmall)}
-          className={isSmall ? "card small" : "card large"}
+          className={isSmall ? "modalOff" : "modalOn"}
         >
-          <div className="card_text">
-          <h3>State</h3>
-          <p>Population</p>
-          <p>Avg Income</p>
+          <div
+            onClick={() => setIsSmall(!isSmall)}
+            className={isSmall ? "card small" : "card large"}
+          >
+            <div className="card_text">
+              <h3>State</h3>
+              <p>Population</p>
+              <p>Avg Income</p>
+            </div>
           </div>
-        </div>
         </div>
       </div>
     </div>
   );
 };
-

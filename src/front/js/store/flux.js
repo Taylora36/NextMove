@@ -56,6 +56,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       ],
 
       stateData: [],
+      accessToken: "",
     },
 
     actions: {
@@ -106,6 +107,30 @@ const getState = ({ getStore, getActions, setStore }) => {
               ],
             })
           );
+      },
+
+      handle_Login_Click: (email, password) => {
+        const options = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: email,
+            password: password,
+          }),
+        };
+        return fetch(`${process.env.BACKEND_URL}/api/login`, options)
+          .then((resp) => {
+            if (resp.status === 200) return resp.json();
+            else alert("An error has occurred!");
+          })
+          .then((data) => {
+            setStore({ accessToken: data.access_token });
+          })
+          .catch((error) => {
+            console.error("There was an error", error);
+          });
       },
     },
   };
