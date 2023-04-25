@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
 import { Modal } from "./ExpandoCard.jsx";
@@ -20,9 +20,9 @@ export const Card = ({ state }) => {
             className={isSmall ? "card small" : "card large"}
           >
             <div className="card_text">
-              <h3>{state?.stateName}</h3>
-              <p>Population: {state?.population}</p>
-              <p>Median Income: {state?.medIncome}</p>
+              <h3>{state.stateName}</h3>
+              <p>Population: {state.population.value}</p>
+              <p>Median Income: {state.medIncome.value}</p>
             </div>
           </div>
         </div>

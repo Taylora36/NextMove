@@ -12,7 +12,6 @@ export const Explore = () => {
 
   const testState = () => {
     actions.getStateBatch();
-    console.log(store.stateData);
   };
 
   const [query, setQuery] = useState("");
@@ -21,6 +20,10 @@ export const Explore = () => {
   useEffect(() => {
     setSearchOutput();
   }, [query]);
+
+  useEffect(() => {
+    actions.getStateBatch();
+  }, []);
 
   return (
     <div className="locations_container">
@@ -39,7 +42,7 @@ export const Explore = () => {
       </div>
       <div className="top_row">
         <div className="title_page">
-          <h3 className="title_header">Choose your city...</h3>
+          <h3 className="title_header">Choose your State</h3>
         </div>
       </div>
       <div className="search_bar">
@@ -60,14 +63,8 @@ export const Explore = () => {
       </div>
       <div className="card_lineup">
         <div className="cards">
-          {store.stateData.map((item, index) => {
-            return (
-              <Card
-                key={index}
-                population={item?.population}
-                medIncome={item?.medIncome}
-              />
-            );
+          {store.stateData.map((state, index) => {
+            return <Card key={index} state={state} />;
           })}
         </div>
         <button className="arrow_button">

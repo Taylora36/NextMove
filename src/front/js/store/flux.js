@@ -88,7 +88,7 @@ const getState = ({ getStore, getActions, setStore }) => {
               if (
                 !stateData.map((i) => i.stateName).includes(state.stateName)
               ) {
-                setStore({ stateData: [...stateData, state.resp] });
+                setStore({ stateData: [...stateData, state] });
               }
             }
           })
