@@ -86,9 +86,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             for (let state of values) {
               stateData = getStore().stateData;
               if (
-                !stateData
-                  .map((i) => i.selectedProfile.label)
-                  .includes(state.resp.selectedProfile.label)
+                !stateData.map((i) => i.stateName).includes(state.stateName)
               ) {
                 setStore({ stateData: [...stateData, state.resp] });
               }
@@ -99,10 +97,9 @@ const getState = ({ getStore, getActions, setStore }) => {
               stateData: [
                 ...stateData,
                 {
-                  selectedProfile: {
-                    label: null,
-                  },
-                  highlights: [],
+                  stateName: null,
+                  population: null,
+                  medIncome: null,
                 },
               ],
             })

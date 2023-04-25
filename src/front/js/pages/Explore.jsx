@@ -15,6 +15,13 @@ export const Explore = () => {
     console.log(store.stateData);
   };
 
+  const [query, setQuery] = useState("");
+  const [searchOutput, setSearchOutput] = useState([]);
+
+  useEffect(() => {
+    setSearchOutput();
+  }, [query]);
+
   return (
     <div className="locations_container">
       <div className="_filter">
@@ -36,28 +43,37 @@ export const Explore = () => {
         </div>
       </div>
       <div className="search_bar">
-        <input className="search" placeholder="Search city..." type="text" />
-        <button className="search_button" type="submit">
-          Go
-        </button>
+        <label htmlFor="search-input">
+          <input
+            id="search-input"
+            className="search"
+            name="search-input"
+            type="search"
+            placeholder="Search for a State (e.g. Michigan, MI)"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <button className="search_button" type="submit">
+            Go
+          </button>
+        </label>
       </div>
       <div className="card_lineup">
         <div className="cards">
-          {store.stateData.map((state, index) => {
-            return <Card key={index} state={state} />;
+          {store.stateData.map((item, index) => {
+            return (
+              <Card
+                key={index}
+                population={item?.population}
+                medIncome={item?.medIncome}
+              />
+            );
           })}
         </div>
         <button className="arrow_button">
           <IoIosArrowForward onClick={testState} />
         </button>
       </div>
-      <button
-        style={{ position: "absolute", left: "150px" }}
-        onClick={testState}
-      >
-        Test
-      </button>{" "}
-      */}
     </div>
   );
 };

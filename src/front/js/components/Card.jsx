@@ -1,12 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
 import { Modal } from "./ExpandoCard.jsx";
 import { AiOutlineStar } from "react-icons/ai";
 import "../../styles/card.scss";
 
-export const Card = (props) => {
-  const { actions } = useContext(Context);
+export const Card = ({ state }) => {
   const [isSmall, setIsSmall] = useState(true);
 
   return (
@@ -21,78 +20,13 @@ export const Card = (props) => {
             className={isSmall ? "card small" : "card large"}
           >
             <div className="card_text">
-              <h3>State</h3>
-              <p>Population</p>
-              <p>Avg Income</p>
+              <h3>{state?.stateName}</h3>
+              <p>Population: {state?.population}</p>
+              <p>Median Income: {state?.medIncome}</p>
             </div>
           </div>
         </div>
       </div>
-      <div className="single_card">
-        <div
-          onClick={() => setIsSmall(!isSmall)}
-          className={isSmall ? "modalOff" : "modalOn"}
-        >
-          <div
-            onClick={() => setIsSmall(!isSmall)}
-            className={isSmall ? "card small" : "card large"}
-          >
-            <div className="card_text">
-              <h3>State</h3>
-              <p>Population</p>
-              <p>Avg Income</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="single_card">
-        <div
-          onClick={() => setIsSmall(!isSmall)}
-          className={isSmall ? "modalOff" : "modalOn"}
-        >
-          <div
-            onClick={() => setIsSmall(!isSmall)}
-            className={isSmall ? "card small" : "card large"}
-          >
-            <div className="card_text">
-              <h3>State</h3>
-              <p>Population</p>
-              <p>Avg Income</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* <div className="card">
-        <h2>
-          <a href="#">Title</a>
-        </h2>
-        <p>Some article description stuff.</p>
-      </div>
-      </div>
-      <div className="single_card">
-      <div
-        onClick={() => setIsSmall(!isSmall)}
-        className={isSmall ? "modalOff" : "modalOn"}
-      >
-        <div
-          onClick={() => setIsSmall(!isSmall)}
-          className={isSmall ? "card small" : "card large"}
-        >
-          <div className="card_text">
-          <a href="#">{props.state.selectedProfile.label}</a>
-          <h3>State</h3>
-          <p>Population</p>
-          <p>Avg Income</p>
-          </div>
-        </div>
-      </div>
-      <div className="card">
-        <h2>
-          <a href="#">Title</a>
-        </h2>
-        <p>Some article description stuff.</p>
-      </div> */}
     </div>
   );
 };
