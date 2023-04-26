@@ -96,6 +96,22 @@ def get_state_highlights(url_state):
     }
 
     request = requests.get(url, params=payload)
-    return jsonify(
-        resp=request.json()
+
+    highlights = request.json()["highlights"]
+    
+    population = filter(
+        lambda item : item["label"] == "Total Population",
+        highlights
     )
+
+    medIncome = filter(
+        lambda item : item["label"] == "Median Household Income",
+        highlights
+    )
+
+    return jsonify({
+        "stateName": request.json()["selectedProfile"]["label"],
+        "population": list(population)[0],
+        "medIncome": list(medIncome)[0]
+    })
+    

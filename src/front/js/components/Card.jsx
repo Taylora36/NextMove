@@ -1,11 +1,7 @@
-import React, { useContext, useState } from "react";
-import PropTypes from "prop-types";
-import { Context } from "../store/appContext";
-import { AiOutlineStar } from "react-icons/ai";
+import React, { useState } from "react";
 import "../../styles/card.scss";
 
-export const Card = (props) => {
-  const { actions } = useContext(Context);
+export const Card = ({ state }) => {
   const [isSmall, setIsSmall] = useState(true);
 
   return (
@@ -20,9 +16,9 @@ export const Card = (props) => {
             className={isSmall ? "card small" : "card large"}
           >
             <div className="card_text">
-              <h3>State</h3>
-              <p>Population</p>
-              <p>Avg Income</p>
+              <h3>{state.stateName}</h3>
+              <p>Population: {state.population.value}</p>
+              <p>Median Income: {state.medIncome.value}</p>
             </div>
           </div>
         </div>

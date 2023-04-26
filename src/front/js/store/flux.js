@@ -68,6 +68,17 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
+      dehydrate: () => {
+        sessionStorage.setItem("applicationState", JSON.stringify(getStore()));
+      },
+
+      rehydrate: () => {
+        const appState = sessionStorage.getItem("applicationState");
+        if (appState) {
+          setStore(JSON.parse(appState));
+        }
+      },
+
       getStateBatch: (count = 5) => {
         const allStates = getStore().allStates;
         let stateData = getStore().stateData;
@@ -86,11 +97,9 @@ const getState = ({ getStore, getActions, setStore }) => {
             for (let state of values) {
               stateData = getStore().stateData;
               if (
-                !stateData
-                  .map((i) => i.selectedProfile.label)
-                  .includes(state.resp.selectedProfile.label)
+                !stateData.map((i) => i.stateName).includes(state.stateName)
               ) {
-                setStore({ stateData: [...stateData, state.resp] });
+                setStore({ stateData: [...stateData, state] });
               }
             }
           })
@@ -99,14 +108,16 @@ const getState = ({ getStore, getActions, setStore }) => {
               stateData: [
                 ...stateData,
                 {
-                  selectedProfile: {
-                    label: null,
-                  },
-                  highlights: [],
+                  stateName: null,
+                  population: null,
+                  medIncome: null,
                 },
               ],
             })
-          );
+          )
+          .finally(() => {
+            getActions().dehydrate();
+          });
       },
 
       handle_Login_Click: (email, password) => {
