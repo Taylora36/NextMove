@@ -28,9 +28,32 @@ export const Explore = () => {
             <GoTriangleDown />
           </button>
           <div className="dropdown_content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+            <ul class="checkbox-dropdown-list">
+              <li>
+                <label>
+                  <input type="checkbox" value="Vejle" name="city" />
+                  Milwaukee
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox" value="Horsens" name="city" />
+                  Denver
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox" value="Kolding" name="city" />
+                  Boston
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox" value="Kolding" name="city" />
+                  LA
+                </label>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

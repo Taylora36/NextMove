@@ -6,6 +6,7 @@ import { Sidebar } from "./components/Sidebar.jsx";
 import Home from "./pages/Home.jsx";
 import { Footer } from "./components/Footer.jsx";
 import { Explore } from "./pages/Explore.jsx";
+import { Compare } from "./pages/Compare.jsx";
 import { Login } from "./pages/Login.jsx";
 
 const Layout = () => {
@@ -22,6 +23,7 @@ const Layout = () => {
             <Route element={<Home />} path="/" />
             <Route element={<Login />} path="/login" />
             <Route element={<Explore />} path="/explore" />
+            <Route element={<Compare />} path="/compare" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
           <Footer />
