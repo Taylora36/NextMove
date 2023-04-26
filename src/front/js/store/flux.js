@@ -68,6 +68,17 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
+      dehydrate: () => {
+        sessionStorage.setItem("applicationState", JSON.stringify(getStore()));
+      },
+
+      rehydrate: () => {
+        const appState = sessionStorage.getItem("applicationState");
+        if (appState) {
+          setStore(JSON.parse(appState));
+        }
+      },
+
       getStateBatch: (count = 5) => {
         const allStates = getStore().allStates;
         let stateData = getStore().stateData;
@@ -103,7 +114,10 @@ const getState = ({ getStore, getActions, setStore }) => {
                 },
               ],
             })
-          );
+          )
+          .finally(() => {
+            getActions().dehydrate();
+          });
       },
 
       handle_Login_Click: (email, password) => {

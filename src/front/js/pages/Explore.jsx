@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
-import { Sidebar } from "../components/Sidebar.jsx";
 import { Card } from "../components/Card.jsx";
-import ExpandoCard from "../components/ExpandoCard.jsx";
 import "../../styles/explore.css";
 import { GoTriangleDown } from "react-icons/go";
 import { IoIosArrowForward } from "react-icons/io";
@@ -10,19 +8,15 @@ import { IoIosArrowForward } from "react-icons/io";
 export const Explore = () => {
   const { store, actions } = useContext(Context);
 
-  const testState = () => {
+  const loadStateBatch = () => {
     actions.getStateBatch();
   };
 
   const [query, setQuery] = useState("");
-  const [searchOutput, setSearchOutput] = useState([]);
 
   useEffect(() => {
-    setSearchOutput();
-  }, [query]);
-
-  useEffect(() => {
-    actions.getStateBatch();
+    actions.rehydrate();
+    actions.getStateBatch(51);
   }, []);
 
   return (
@@ -56,19 +50,22 @@ export const Explore = () => {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
-          <button className="search_button" type="submit">
-            Go
-          </button>
         </label>
       </div>
       <div className="card_lineup">
         <div className="cards">
-          {store.stateData.map((state, index) => {
-            return <Card key={index} state={state} />;
-          })}
+          {store.stateData
+            .filter((elem) => {
+              return [elem.stateName.toLowerCase()].some((e) =>
+                e.includes(query.toLowerCase())
+              );
+            })
+            .map((state, index) => {
+              return <Card key={index} state={state} />;
+            })}
         </div>
         <button className="arrow_button">
-          <IoIosArrowForward onClick={testState} />
+          <IoIosArrowForward onClick={loadStateBatch} />
         </button>
       </div>
     </div>
