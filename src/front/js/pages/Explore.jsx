@@ -21,42 +21,6 @@ export const Explore = () => {
 
   return (
     <div className="locations_container">
-      <div className="_filter">
-        <div className="drop_down">
-          <button className="filter_button" role="button">
-            Filter
-            <GoTriangleDown />
-          </button>
-          <div className="dropdown_content">
-            <ul class="checkbox-dropdown-list">
-              <li>
-                <label>
-                  <input type="checkbox" value="Vejle" name="city" />
-                  Milwaukee
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input type="checkbox" value="Horsens" name="city" />
-                  Denver
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input type="checkbox" value="Kolding" name="city" />
-                  Boston
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input type="checkbox" value="Kolding" name="city" />
-                  LA
-                </label>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
       <div className="top_row">
         <div className="title_page">
           <h3 className="title_header">Choose your State</h3>
