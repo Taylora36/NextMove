@@ -7,7 +7,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.dev.js --port 3000",
+    "start": "webpack-dev-server --config webpack.dev.js --port 8080",
     "build": "webpack --config webpack.prod.js"
   },
   "author": {
@@ -17,10 +17,6 @@
     {
       "name": "Taylor",
       "url": "https://github.com/Taylora36"
-    },
-    {
-      "name": "Lucas",
-      "url": "https://github.com/lucasgusmao98"
     },
     {
       "name": "Josh",

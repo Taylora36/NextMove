@@ -75,12 +75,10 @@ fips = {
 def signup():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
-    user = User.query.filter_by(email=email).one_or_none()
+    user = User.query.filter_by(email=email).first()
 
     if user is not None:
         return jsonify(message = "User already exists")
-    
-    # hashed_password = User._password
 
     user = User(email = email, password = password)
     db.session.add(user)
@@ -91,18 +89,12 @@ def signup():
 def login():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
-    user = User.query.filter_by(email=email).one_or_none()
+    user = User.query.filter_by(email=email).first()
     if user is not None:
         if user.check_password_hash(password):
             access_token = create_access_token(identity=email)
             return jsonify(access_token=access_token)
     return jsonify({"msg": "Invalid cedentials."}), 401
-
-@api.route("/delete/<int:id>", methods=["DELETE"])
-def delete_user(id):
-    user = User.query.filter_by(id = id).delete()
-    db.session.commit()
-    return jsonify(message = "User deleted"), 200
 
 @api.route("/highlights/<string:url_state>", methods=["GET"])
 def get_state_highlights(url_state):
