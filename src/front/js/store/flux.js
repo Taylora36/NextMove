@@ -143,6 +143,25 @@ const getState = ({ getStore, getActions, setStore }) => {
             console.error("There was an error", error);
           });
       },
+
+      handle_signup_Click: (email, password) => {
+        const options = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: email,
+            password: password,
+          }),
+        };
+        return fetch(`${process.env.BACKEND_URL}/api/signup`, options)
+          .then((resp) => {
+            if (resp.status === 200) return resp.json();
+            else alert("An error has occurred!");
+          })
+          .then(() => getActions().handle_Login_Click(email, password));
+      },
     },
   };
 };

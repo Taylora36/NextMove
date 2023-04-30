@@ -1,3 +1,10 @@
+.login__page__container {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .login__container {
   height: 38rem;
   width: 33rem;
@@ -8,10 +15,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .login__container > h1 {
+  color: #422800;
   margin-bottom: 5rem;
+  cursor: pointer;
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.2rem;
+  text-decoration-color: #e84a4a;
 }
 
 .field {
@@ -24,7 +39,14 @@
 }
 
 .login__btn {
+  color: #422800;
   margin: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background-color: #ffdbb580;
+  border: 2px solid #422800;
+  border-radius: 0.5rem;
+  box-shadow: #422800 4px 4px 0 0;
 }
 
 .field > input {

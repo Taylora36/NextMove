@@ -71,11 +71,25 @@ fips = {
 # Create a route to authenticate your users and return JWTs. The
 # create_access_token() function is used to actually generate the JWT.
 
+@api.route("/signup", methods=["POST"])
+def signup():
+    email = request.json.get("email", None)
+    password = request.json.get("password", None)
+    user = User.query.filter_by(email=email).first()
+
+    if user is not None:
+        return jsonify(message = "User already exists")
+
+    user = User(email = email, password = password)
+    db.session.add(user)
+    db.session.commit()
+    return jsonify(message = "User created")
+
 @api.route("/login", methods=["POST"])
 def login():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
-    user = User.query.filter_by(email=email).one_or_none()
+    user = User.query.filter_by(email=email).first()
     if user is not None:
         if user.check_password_hash(password):
             access_token = create_access_token(identity=email)
