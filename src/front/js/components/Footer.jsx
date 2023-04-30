@@ -1,12 +1,13 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 // Styles & Assets
 import LogoSVG from "../components/LogoSVG.jsx";
 
 export const Footer = () => {
+  const location = useLocation();
   return (
-    <footer>
+    <footer className={location.pathname !== "/" ? "d-none" : ""}>
       <div className="nav__footer">
         <nav>
           <ul className="nav__links">
