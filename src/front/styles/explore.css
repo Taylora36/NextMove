@@ -72,3 +72,13 @@
 .arrow_button:hover {
   color: #e84a4a;
 }
+.blob__left {
+  height: 35rem;
+  width: 38rem;
+  position: absolute;
+  top: -18rem;
+  left: -18rem;
+  z-index: -1;
+  background: linear-gradient(0.58turn, #a8504a, #c66e68, #e48c86);
+  border-radius: 50%;
+}
