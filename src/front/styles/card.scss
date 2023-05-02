@@ -1,6 +1,6 @@
 .cards {
   display: flex;
-  margin-top: 2rem;
+  margin-top: 1rem;
   place-items: center;
 }
 .single_card {
@@ -9,12 +9,12 @@
 }
 .small {
   height: 11rem;
-  transition: width 1s, height 1s;
+
   border-radius: 1rem;
   padding: 1rem;
   margin-top: 4rem;
   box-shadow: 3px 3px 12px 2px rgba(black, 0.6);
-  transition: 0.2s;
+
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.2);
   color: black;
@@ -28,30 +28,39 @@
 
 .large {
   isolation: isolate;
-  width: 25rem;
+  padding: 1rem;
+  width: 20rem;
   height: 15rem;
-  transition: width 1s, height 1s;
   margin: 1rem auto;
+  background: rgba(255, 255, 255, 0.2);
+  color: black;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
-
+.large h3 {
+  text-align: center;
+}
 .modalOff {
   width: 16rem;
   height: 18rem;
-  transition: background-color 1s;
+  transition: background-color 0s;
   box-shadow: 3px 3px 12px 2px rgba(black, 0.6);
-  transition: 0.2s;
   border-radius: 1rem;
   padding: 1.5rem;
+  background: rgb(219, 164, 92);
   background: linear-gradient(
-    0deg,
-    rgba(40, 44, 52, 1) 0%,
-    rgba(17, 0, 32, 0.5) 100%
+    117deg,
+    rgba(219, 164, 92, 1) 0%,
+    rgba(224, 152, 113, 1) 2%,
+    rgba(168, 80, 74, 1) 100%
   );
-  box-shadow: 0 7px 20px 5px #00000088;
 }
 
 .modalOn {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100dvw;
