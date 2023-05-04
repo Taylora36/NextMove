@@ -21,6 +21,7 @@ export const Explore = () => {
 
   return (
     <div className="locations_container">
+      <span className="blob__left"></span>
       <div className="top_row">
         <div className="title_page">
           <h3 className="title_header">Choose your State</h3>

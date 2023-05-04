@@ -8,6 +8,9 @@
   font-stretch: ultra-expanded;
   font-size: 2.5rem;
   color: #282c34;
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.2rem;
+  text-decoration-color: #e84a4a;
 }
 .search_bar {
   position: relative;
@@ -44,4 +47,18 @@
 }
 .arrow_button:hover {
   color: #e84a4a;
+}
+.arrow_button::after {
+  transition: all 0.35s;
+  transform: rotate(-90deg);
+}
+.blob__left {
+  height: 35rem;
+  width: 41rem;
+  position: absolute;
+  top: -18rem;
+  left: -18rem;
+  z-index: -1;
+  background: linear-gradient(0.58turn, #a8504a, #c66e68, #e48c86);
+  border-radius: 50%;
 }
