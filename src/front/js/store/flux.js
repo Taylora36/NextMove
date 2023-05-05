@@ -57,6 +57,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       stateData: [],
       accessToken: "",
+      favorites: [],
     },
 
     actions: {
@@ -111,6 +112,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                   stateName: null,
                   population: null,
                   medIncome: null,
+                  employment: null,
                 },
               ],
             })
@@ -161,6 +163,17 @@ const getState = ({ getStore, getActions, setStore }) => {
             else alert("An error has occurred!");
           })
           .then(() => getActions().handle_Login_Click(email, password));
+      },
+      addToFavorites: (itemName) => {
+        const store = getStore();
+        let favoriteList = [...store.favorites, itemName];
+        let uniqueFavoriteList = [...new Set(favoriteList)];
+        setStore({ favorites: uniqueFavoriteList });
+      },
+      removeFromFavorites: (idx) => {
+        const store = getStore();
+        let newFavorites = store.favorites.filter((item, index) => index != idx)
+        setStore({ favorites: newFavorites });
       },
     },
   };

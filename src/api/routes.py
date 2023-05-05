@@ -123,9 +123,15 @@ def get_state_highlights(url_state):
         highlights
     )
 
+    employment = filter(
+        lambda item : item["label"] == "Employment Rate",
+        highlights
+    )
+
     return jsonify({
         "stateName": request.json()["selectedProfile"]["label"],
         "population": list(population)[0],
-        "medIncome": list(medIncome)[0]
+        "medIncome": list(medIncome)[0],
+        "employment": list(employment)[0]
     })
-    
+ 
