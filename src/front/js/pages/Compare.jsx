@@ -2,9 +2,18 @@ import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 
 import "../../styles/compare.css";
-import { CompareCard } from "../components/CompareCard.jsx";
+import { Card } from "../components/Card.jsx";
 
 export const Compare = () => {
+  function Favorites({ states, onFavoritedStates }) {
+    const favoriteStates = states.filter((state) => (
+      <Card
+        key={state.id}
+        state={state}
+        onFavoritedStates={onFavoritedStates}
+      />
+    ));
+  }
 
   return (
     <div className="compare_container">
@@ -12,7 +21,7 @@ export const Compare = () => {
         <h3 className="cities_header">Your cities</h3>
       </div>
       <div className="compare_cards">
-        <CompareCard />
+        <Card />
       </div>
     </div>
   );
