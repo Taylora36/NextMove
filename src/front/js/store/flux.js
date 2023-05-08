@@ -172,7 +172,9 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       removeFromFavorites: (idx) => {
         const store = getStore();
-        let newFavorites = store.favorites.filter((item, index) => index != idx)
+        let newFavorites = store.favorites.filter(
+          (item, index) => index != idx
+        );
         setStore({ favorites: newFavorites });
       },
     },

@@ -44,8 +44,8 @@ export const Explore = () => {
         <div className="cards">
           {store.stateData
             .filter((elem) => {
-              return [elem.stateName.toLowerCase()].some((e) =>
-                e.includes(query.toLowerCase())
+              return [elem.stateName?.toLowerCase()].some((e) =>
+                e.includes(query?.toLowerCase())
               );
             })
             .map((state, index) => {

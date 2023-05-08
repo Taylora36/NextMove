@@ -4,7 +4,7 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 import os
 import requests
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User
+from api.models import db, User, Favorites, APICache
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
@@ -99,8 +99,12 @@ def login():
 @api.route("/highlights/<string:url_state>", methods=["GET"])
 def get_state_highlights(url_state):
     print('route reached')
+    cache = APICache.query.filter_by(stateName=url_state).first()
+    if cache:
+        return jsonify(cache.response)
+
     fips_code = fips[
-       url_state.upper()
+    url_state.upper()
     ]
     print(fips_code)
 
@@ -127,11 +131,47 @@ def get_state_highlights(url_state):
         lambda item : item["label"] == "Employment Rate",
         highlights
     )
-
-    return jsonify({
+    response = {
         "stateName": request.json()["selectedProfile"]["label"],
         "population": list(population)[0],
         "medIncome": list(medIncome)[0],
         "employment": list(employment)[0]
-    })
+    }
+    cache = APICache(stateName=url_state, response=response)
+    db.session.add(cache)
+    db.session.commit()
+
+    return jsonify(response)
  
+@api.route("/favorites", methods=["GET"])
+@jwt_required()
+def get_favorites():
+    user = User.query.filter_by(email = get_jwt_identity()).first()
+    return jsonify(user.serialize())
+
+@api.route("/favorites/<string:stateName>", methods=["POST"])
+@jwt_required()
+def add_favorites(stateName):
+    user = User.query.filter_by(email = get_jwt_identity()).first()
+    if stateName in user.serialize()["favorites"]:
+        return "", 204
+    user.favorites.append(Favorites(stateName = stateName))
+    db.session.merge(user)
+    db.session.commit()
+    return "", 204
+
+@api.route("/favorites/<string:stateName>", methods=["DELETE"])
+@jwt_required()
+def delete_favorites(stateName):
+    user = User.query.filter_by(email = get_jwt_identity()).first()
+    if stateName not in user.serialize()["favorites"]:
+        return "", 204
+    user.favorites = list(filter(
+        lambda fav: fav.stateName != stateName,
+        user.favorites
+    ))
+    db.session.merge(user)
+    db.session.commit()
+    return "", 204
+
+
