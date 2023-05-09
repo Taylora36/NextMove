@@ -43,3 +43,9 @@ class APICache(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     stateName = db.Column(db.String(32))
     response = db.Column(db.JSON)
+
+    def serialize(self):
+        return {
+            "stateName": self.stateName,
+            "response": self.response
+        }

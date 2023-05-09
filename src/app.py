@@ -80,19 +80,19 @@ if __name__ == '__main__':
 #Retrieving, saving, and deleting favorites
 favorites = [ { "label": "My favorite", "delete": False } ]
 
-@app.route('/favorites', methods=['GET'])
-def get_favorites():
-    return jsonify(favorites)
+# @app.route('/favorites', methods=['GET'])
+# def get_favorites():
+#     return jsonify(favorites)
     
-@app.route('/favorites', methods=['POST'])
-def add_new_favorite():
-    request_body = request.json
-    print("Adding a favorite", request_body)
-    favorites.append(request_body)
-    return jsonify(favorites)
+# @app.route('/favorites', methods=['POST'])
+# def add_new_favorite():
+#     request_body = request.json
+#     print("Adding a favorite", request_body)
+#     favorites.append(request_body)
+#     return jsonify(favorites)
 
-@app.route('/favorites/<int:position>', methods=['DELETE'])
-def delete_favorite(position):
-    favorites.pop(1)
-    print("This is the position to delete: ",position)
-    return jsonify(favorites)  
+# @app.route('/favorites/<int:position>', methods=['DELETE'])
+# def delete_favorite(position):
+#     favorites.pop(1)
+#     print("This is the position to delete: ",position)
+#     return jsonify(favorites)  

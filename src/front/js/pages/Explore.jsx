@@ -45,7 +45,7 @@ export const Explore = () => {
           {store.stateData
             .filter((elem) => {
               return [elem.stateName?.toLowerCase()].some((e) =>
-                e.includes(query?.toLowerCase())
+                e?.includes(query?.toLowerCase())
               );
             })
             .map((state, index) => {
