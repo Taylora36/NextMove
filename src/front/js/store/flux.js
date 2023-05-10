@@ -54,9 +54,9 @@ const getState = ({ getStore, getActions, setStore }) => {
         { name: "WISCONSIN", abbreviation: "WI" },
         { name: "WYOMING", abbreviation: "WY" },
       ],
-
       stateData: [],
       accessToken: "",
+      favorites: [],
     },
 
     actions: {
@@ -111,6 +111,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                   stateName: null,
                   population: null,
                   medIncome: null,
+                  employment: null,
                 },
               ],
             })
@@ -161,6 +162,89 @@ const getState = ({ getStore, getActions, setStore }) => {
             else alert("An error has occurred!");
           })
           .then(() => getActions().handle_Login_Click(email, password));
+      },
+
+      handle_favorited_change: () => {
+        // setIsFavorited((isFavorited) => !isFavorited);
+        const options = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ favorite: !favorite }),
+        };
+        return fetch(`${process.env.BACKEND_URL}/api/favorites`, options)
+          .then((resp) => {
+            if (resp.status === 200) return resp.json();
+            else alert("An error has occurred!");
+          })
+          .then((data) => {
+            setStore({ accessToken: data.access_token });
+          })
+          .catch((error) => {
+            console.error("There was an error", error);
+          });
+      },
+
+      getFavorites: () => {
+        const options = {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${getStore().accessToken}`,
+            "Content-Type": "application/json",
+          },
+        };
+        return fetch(`${process.env.BACKEND_URL}/api/favorites`, options)
+          .then((resp) => {
+            if (!resp.ok) {
+              throw new Error(resp.status);
+            }
+            return resp.json();
+          })
+          .then((data) => {
+            setStore({ favorites: data.favorites });
+            getActions().dehydrate();
+          })
+          .catch((error) => {
+            console.error("Error retrieving favorites:", error);
+          });
+      },
+
+      addToFavorites: (itemName) => {
+        const store = getStore();
+        let favoriteList = [...store.favorites, itemName];
+        let uniqueFavoriteList = [...new Set(favoriteList)];
+        setStore({ favorites: uniqueFavoriteList });
+
+        const options = {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${getStore().accessToken}`,
+            "Content-Type": "application/json",
+          },
+        };
+        return fetch(
+          `${process.env.BACKEND_URL}/api/favorites/${itemName}`,
+          options
+        ).then(() => getActions().dehydrate());
+      },
+
+      removeFromFavorites: (itemName) => {
+        const store = getStore();
+        let newFavorites = store.favorites.filter((item) => item != itemName);
+        setStore({ favorites: newFavorites });
+
+        const options = {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${getStore().accessToken}`,
+            "Content-Type": "application/json",
+          },
+        };
+        return fetch(
+          `${process.env.BACKEND_URL}/api/favorites/${itemName}`,
+          options
+        ).then(() => getActions().dehydrate());
       },
     },
   };

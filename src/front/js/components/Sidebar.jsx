@@ -9,7 +9,7 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { Link, useLocation } from "react-router-dom";
 
 export const Sidebar = (props) => {
-  const location = useLocation()
+  const location = useLocation();
   return (
     <nav className={location.pathname == "/" ? "d-none" : "sidebar"}>
       <ul className="sidebar-nav">
@@ -21,7 +21,7 @@ export const Sidebar = (props) => {
           </a>
         </li>
         <li className="sidebar-item">
-          <NavLink to="/" href="#" className="sidebar-link">
+          <NavLink to="/" className="sidebar-link">
             <span className="sidebar-icon">
               <AiFillCar />
             </span>
@@ -29,7 +29,7 @@ export const Sidebar = (props) => {
           </NavLink>
         </li>
         <li className="sidebar-item">
-          <NavLink to="/explore" href="#" className="sidebar-link">
+          <NavLink to="/explore" className="sidebar-link">
             <span className="sidebar-icon">
               <BiSearch />
             </span>
@@ -37,7 +37,7 @@ export const Sidebar = (props) => {
           </NavLink>
         </li>
         <li className="sidebar-item">
-          <NavLink to="/compare" href="#" className="sidebar-link">
+          <NavLink to="/compare" className="sidebar-link">
             <span className="sidebar-icon">
               <HiSquare3Stack3D />
             </span>

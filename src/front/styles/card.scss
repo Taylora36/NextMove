@@ -1,45 +1,65 @@
-.cards{
-  display:flex;
-  margin-top:2rem;
+.cards {
+  display: flex;
+  margin-top: 1rem;
   place-items: center;
 }
-.single_card{
+.single_card {
   border-radius: 1rem;
-  color: #A1A1AA;
+  color: #a1a1aa;
 }
 .small {
-  height: 9rem;
-  transition: width 1s, height 1s;
-  background: black;
+  height: 11rem;
+
   border-radius: 1rem;
   padding: 1rem;
-  margin-top:7rem;
+  margin-top: 4rem;
   box-shadow: 3px 3px 12px 2px rgba(black, 0.6);
-  transition: 0.2s;
+
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2);
+  color: black;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  justify-content: right;
 }
 
 .large {
   isolation: isolate;
-  width: 25rem;
+  padding: 1rem;
+  width: 20rem;
   height: 15rem;
-  transition: width 1s, height 1s;
   margin: 1rem auto;
+  background: rgba(255, 255, 255, 0.2);
+  color: black;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
-
+.large h3 {
+  text-align: center;
+}
 .modalOff {
   width: 16rem;
   height: 18rem;
-  transition: background-color 1s;
+  transition: background-color 0s;
   box-shadow: 3px 3px 12px 2px rgba(black, 0.6);
-  transition: 0.2s;
   border-radius: 1rem;
   padding: 1.5rem;
-  background: linear-gradient(0deg, rgba(40,44,52,1) 0%, rgba(17,0,32,.5) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(40, 44, 52, 1) 0%,
+    rgba(17, 0, 32, 0.5) 100%
+  );
   box-shadow: 0 7px 20px 5px #00000088;
 }
 
 .modalOn {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100dvw;
@@ -48,28 +68,22 @@
   transition: background-color 1s;
 }
 
-
 .single_card:not(:first-child) {
   margin-left: -1rem;
 }
 
 .single_card .modalOff:hover {
-transform: translateY(-2rem);
-transition: 0.4s ease-out;
+  transform: translateY(-2rem);
+  transition: 0.4s ease-out;
 }
 
 .single_card:hover ~ .single_card {
-left: 2rem;
-transition: 0.4s ease-out;
+  left: 2rem;
+  transition: 0.4s ease-out;
 }
-.card_text p:hover{
-  color:#e84a4a;
-}
-.card_text h3:hover{
-  color:#e84a4a;
-}
-.card_text h3{
-  font-size:1.3rem;
+
+.card_text h3 {
+  font-size: 1.3rem;
 }
 .button-74 {
   background-color: #fbeee0;
@@ -101,4 +115,16 @@ transition: 0.4s ease-out;
     min-width: 120px;
     padding: 0 25px;
   }
+}
+.empty {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  padding-top: 1rem;
+}
+.empty:hover {
+  color: #e84a4a;
+}
+.filled {
+  color: #e84a4a;
 }

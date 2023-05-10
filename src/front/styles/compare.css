@@ -1,18 +1,16 @@
-.compare_cities{
-    display: flex;
+
+.compare_cities {
+  display: flex;
 }
-.cities_header{
-    margin:auto;
-    margin-bottom:2rem;
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-family: 'Fira Sans Extra Condensed', sans-serif;
-    font-family: 'Kanit', sans-serif;
-    font-family: 'Prompt', sans-serif;
-    font-family: 'PT Mono', monospace;
-    font-family: 'Righteous', cursive;
-    font-family: 'Russo One', sans-serif;
+.header_page {
+  margin: 1rem auto 0 auto;
 }
-.compare_cards{
-    display:flex;
-    justify-content: center; 
+.compare_cards {
+  display: flex;
+  margin: 0 auto 0 auto;
+  margin-left: 14%;
+}
+.favorite_cards {
+  flex-wrap: wrap;
+  gap: 2rem;
 }

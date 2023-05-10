@@ -5,56 +5,32 @@
   margin: 1rem auto 0 auto;
 }
 .title_header {
-  /* font-family: "Kanit", sans-serif;
-    font-family: "Prompt", sans-serif;
-    font-family: "Righteous", cursive;
-    font-family: "Russo One", sans-serif; */
   font-stretch: ultra-expanded;
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #282c34;
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.2rem;
+  text-decoration-color: #e84a4a;
 }
 .search_bar {
   position: relative;
   display: flex;
-  margin: 1rem auto 0 auto;
+  margin: 4rem auto 0 auto;
   width: min-content;
 }
 .search {
   border-radius: 25px;
-  width: 550px;
+  width: 580px;
   height: 35px;
   border: 2px solid;
   font-size: 16px;
   background-color: white;
   padding: 2px 40px 2px 10px;
 }
-.search_button {
-  background-color: #282c34;
-  background: linear-gradient(
-    0deg,
-    rgba(40, 44, 52, 1) 0%,
-    rgba(17, 0, 32, 0.5) 100%
-  );
-  color: #f2f2f2;
-  padding: 7px 10px;
-  font-size: 12px;
-  border: none;
-  border-radius: 1rem;
-  cursor: pointer;
 
-  position: absolute;
-  width: 40px;
-  height: 100%;
-  top: 0px;
-  right: 0px;
-}
-.search_button:hover {
-  background: #e84a4a;
-  color: black;
-}
 .card_lineup {
   display: flex;
-  margin: 3rem auto 0 auto;
+  margin: 0 auto 0 auto;
   margin-left: 14%;
 }
 
@@ -63,12 +39,14 @@
   gap: 2rem;
 }
 
-.arrow_button {
-  cursor: pointer;
-  font-size: 100px;
-  border: none;
-  background: transparent;
-}
-.arrow_button:hover {
-  color: #e84a4a;
+
+.blob__left {
+  height: 35rem;
+  width: 41rem;
+  position: absolute;
+  top: -18rem;
+  left: -18rem;
+  z-index: -1;
+  background: linear-gradient(0.58turn, #a8504a, #c66e68, #e48c86);
+  border-radius: 50%;
 }
