@@ -8,9 +8,9 @@ import { IoIosArrowForward } from "react-icons/io";
 export const Explore = () => {
   const { store, actions } = useContext(Context);
 
-  const loadStateBatch = () => {
-    actions.getStateBatch();
-  };
+  // const loadStateBatch = () => {
+  //   actions.getStateBatch();
+  // };
 
   const [query, setQuery] = useState("");
 
@@ -52,9 +52,9 @@ export const Explore = () => {
               return <Card key={index} state={state} />;
             })}
         </div>
-        <button className="arrow_button">
+        {/* <button className="arrow_button">
           <IoIosArrowForward onClick={loadStateBatch} />
-        </button>
+        </button> */}
       </div>
     </div>
   );
