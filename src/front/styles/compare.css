@@ -1,4 +1,12 @@
-
+.cities_header {
+  margin-bottom:2rem;
+  font-stretch: ultra-expanded;
+  font-size: 2.5rem;
+  color: #282c34;
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.2rem;
+  text-decoration-color: #e84a4a;
+}
 .compare_cities {
   display: flex;
 }
@@ -13,4 +21,23 @@
 .favorite_cards {
   flex-wrap: wrap;
   gap: 2rem;
+}
+.blob__bottom {
+  height: 38rem;
+  width: 35rem;
+  position: absolute;
+  bottom: -18rem;
+  left: -18rem;
+  z-index: -1;
+  background: linear-gradient(0.58turn, #a8504a, #c66e68, #e48c86);
+  border-radius: 50%;
+}
+.blob__top {
+  height: 29rem;
+  width: 32rem;
+  position: absolute;
+  top: -20rem;
+  z-index: -1;
+  background: linear-gradient(0.58turn, #e97227, #f1a25e, #e48c86);
+  border-radius: 50%;
 }

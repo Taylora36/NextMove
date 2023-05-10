@@ -23,6 +23,7 @@ export const Compare = () => {
     <div className="compare_container">
       <div className="compare_cities">
         <div className="header_page">
+          <span className="blob__top"></span>
           <h3 className="cities_header">Your cities</h3>
         </div>
       </div>

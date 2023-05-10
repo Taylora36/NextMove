@@ -83,7 +83,7 @@
 }
 
 .card_text h3 {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 .button-74 {
   background-color: #fbeee0;
@@ -116,15 +116,15 @@
     padding: 0 25px;
   }
 }
-.empty {
+.add_favorites {
   display: flex;
   justify-content: center;
   cursor: pointer;
   padding-top: 1rem;
 }
-.empty:hover {
+.add_favorites:hover {
   color: #e84a4a;
 }
-.filled {
-  color: #e84a4a;
+.empty {
+  color: red;
 }
