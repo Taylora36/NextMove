@@ -164,6 +164,27 @@ const getState = ({ getStore, getActions, setStore }) => {
           })
           .then(() => getActions().handle_Login_Click(email, password));
       },
+      handle_favorited_change: () => {
+        setIsFavorited(isFavorited => !isFavorited)
+        const options = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({favorite: !favorite}),
+        };
+        return fetch(`${process.env.BACKEND_URL}/api/favorites`, options)
+          .then((resp) => {
+            if (resp.status === 200) return resp.json();
+            else alert("An error has occurred!");
+          })
+          .then((data) => {
+            setStore({ accessToken: data.access_token });
+          })
+          .catch((error) => {
+            console.error("There was an error", error);
+          });
+      },
       addToFavorites: (itemName) => {
         const store = getStore();
         let favoriteList = [...store.favorites, itemName];

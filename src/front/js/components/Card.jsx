@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import "../../styles/card.scss";
 import { AiOutlineHeart } from "react-icons/ai";
 
-export const Card = ({ state }) => {
+export const Card = ({ state, handleClick }) => {
   const [isSmall, setIsSmall] = useState(true);
+  const [isFavorited, setIsFavorited] = useState(true);
 
   return (
     <div className="cards">
@@ -22,10 +23,12 @@ export const Card = ({ state }) => {
               <p>Median Income: {state.medIncome.value}</p>
               <div className="add_favorites">
                 <span
-                  className="favorites_button"
-                  onClick={() => actions.addToFavorites(props.name)}
+                  onClick={() => actions.setIsFavorited(!isFavorited)}
+                  className={isFavorited ? "heart empty" : "heart filled"}
                 >
-                  <AiOutlineHeart />
+                  <span onClick={() => handleClick(state)}>
+                    <AiOutlineHeart />
+                  </span>
                 </span>
               </div>
             </div>
