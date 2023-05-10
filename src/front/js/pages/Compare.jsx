@@ -5,23 +5,33 @@ import "../../styles/compare.css";
 import { Card } from "../components/Card.jsx";
 
 export const Compare = () => {
-  function Favorites({ states, onFavoritedStates }) {
-    const favoriteStates = states.filter((state) => (
-      <Card
-        key={state.id}
-        state={state}
-        onFavoritedStates={onFavoritedStates}
-      />
-    ));
-  }
+  const { store, actions } = useContext(Context);
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    actions.rehydrate();
+    actions.getFavorites();
+    setCards(
+      store.stateData.filter((state) =>
+        store.favorites?.includes(state.stateName)
+      )
+    );
+  }, []);
+  //iterate over store.favorites and use it to run a specific getstae data for each one
 
   return (
     <div className="compare_container">
       <div className="compare_cities">
-        <h3 className="cities_header">Your cities</h3>
+        <div className="header_page">
+          <h3 className="cities_header">Your cities</h3>
+        </div>
       </div>
       <div className="compare_cards">
-        <Card />
+        <div className="cards">
+          {cards.map((state) => (
+            <Card key={state.id} state={state} />
+          ))}
+        </div>
       </div>
     </div>
   );

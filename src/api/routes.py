@@ -147,7 +147,8 @@ def get_state_highlights(url_state):
 @jwt_required()
 def get_favorites():
     user = User.query.filter_by(email = get_jwt_identity()).first()
-    return jsonify(user.serialize())
+    favorites = [fav.stateName for fav in user.favorites]
+    return jsonify(favorites = favorites)
 
 @api.route("/favorites/<string:stateName>", methods=["POST"])
 @jwt_required()
