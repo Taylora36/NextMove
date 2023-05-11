@@ -33,7 +33,7 @@ export const Sidebar = (props) => {
             <span className="sidebar-icon">
               <BiSearch />
             </span>
-            <span className="link-text">Search</span>
+            <span className="link-text">Explore</span>
           </NavLink>
         </li>
         <li className="sidebar-item">

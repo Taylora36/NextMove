@@ -36,11 +36,17 @@ export const Card = ({ state }) => {
               <p>Population: {state.population.value}</p>
               <p>Median Income: {state.medIncome.value}</p>
               <div className="add_favorites">
-                <span className={isFavorited ? "heart empty" : "heart filled"}>
-                  <span onClick={toggleFavorite}>
-                    <AiOutlineHeart />
+                {store.accessToken ? (
+                  <span
+                    className={isFavorited ? "heart empty" : "heart filled"}
+                  >
+                    <span onClick={toggleFavorite}>
+                      <AiOutlineHeart />
+                    </span>
                   </span>
-                </span>
+                ) : (
+                  ""
+                )}
               </div>
             </div>
           </div>
