@@ -55,7 +55,7 @@ export const Sidebar = (props) => {
           </a>
         </li>
         <li className="sidebar-item">
-          <a href="#" className="sidebar-link">
+          <a href="/login" className="sidebar-link">
             <span className="sidebar-icon">
               <BsFillPersonFill />
             </span>
