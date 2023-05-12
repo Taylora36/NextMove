@@ -134,14 +134,20 @@ const getState = ({ getStore, getActions, setStore }) => {
         };
         return fetch(`${process.env.BACKEND_URL}/api/login`, options)
           .then((resp) => {
-            if (resp.status === 200) return resp.json();
-            else alert("An error has occurred!");
+            if (resp.ok) {
+              return resp.json();
+            } else {
+              return { access_token: "" };
+            }
           })
           .then((data) => {
             setStore({ accessToken: data.access_token });
           })
           .catch((error) => {
             console.error("There was an error", error);
+          })
+          .finally(() => {
+            getActions().dehydrate();
           });
       },
 

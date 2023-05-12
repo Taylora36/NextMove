@@ -14,8 +14,6 @@ export const Login = () => {
 
   const navigate = useNavigate();
 
-  const token = sessionStorage.getItem("token");
-
   const handleLogin = async () => {
     await actions.handle_Login_Click(email, password);
     if (store.accessToken) {

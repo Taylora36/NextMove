@@ -71,7 +71,7 @@ const Home = () => {
               <TbMapSearch className="about__icon" />
             </p>
             <p className="about__card__text">
-              Tailored search options just htmlFor you!
+              Tailored search options just for you!
             </p>
           </div>
         </div>
