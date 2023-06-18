@@ -23,10 +23,27 @@ Some features we hope to include in the future:
 - Better authorization methods
 - More user interaction (e.g., notes, profile updates, grading system, map interactivity, table/graphs)
 
+## How to Use
+- pipenv run start
+- npm run start
+
+If the cards do not load, start over and run the cache:
+- pipenv run python ./src/load.py
+- npm run start
+
+Census.org is a buggy API
+
 ## Features
 ### Home Page
 <img width="410" alt="Screenshot 2023-06-18 140803" src="https://github.com/Taylora36/NextMove/assets/118857845/6b7032d6-2419-4fc4-a3af-130d15a8ebcc">
 <img width="934" alt="Screenshot 2023-06-05 191354" src="https://github.com/Taylora36/NextMove/assets/118857845/de715ead-083e-4089-8b74-2a8f3e1caca7">
+
+### Login/Signup
+<img width="416" alt="Screenshot 2023-06-18 142507" src="https://github.com/Taylora36/NextMove/assets/118857845/efc61a51-7e51-44d6-8158-a174cb5588bd">
+<img width="414" alt="Screenshot 2023-06-18 142525" src="https://github.com/Taylora36/NextMove/assets/118857845/27de5330-85c3-4fbe-916b-f44f5fc6b2d7">
+
+### Explore Locations
+![image](https://github.com/Taylora36/NextMove/assets/118857845/c72eeebb-1062-4fc6-9034-48ff06400749)
 
 # WebApp boilerplate with React JS and Flask API
 
