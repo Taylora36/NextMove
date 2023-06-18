@@ -1,3 +1,33 @@
+# NextMove
+NextMove helps users find and compare cities to determine the next best location to move to. The web application offers data from all U.S. states. Instead of searching online and going through hundreds of sites, NextMove condenses all census and additional data into one application. NextMove also offers the choice of favoriting locations and comparing favorites on a seperate page.
+
+In general:
+- Helps users determine THEIR best location.
+- Seamless data from states/(cities) within the U.S.
+- See personalized locations!
+- Compare your favorites!
+- Keep notes as you explore!
+
+## Technologies
+<div align="center">
+  <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E">
+  <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB">
+  <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54">
+  <img src="https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white">
+  <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white">
+</div>
+
+## Additional Features
+Some features we hope to include in the future:
+- Add more data (e.g., major cities, crime rates, school zones, food, etc.)
+- Better authorization methods
+- More user interaction (e.g., notes, profile updates, grading system, map interactivity, table/graphs)
+
+## Features
+### Home Page
+<img width="410" alt="Screenshot 2023-06-18 140803" src="https://github.com/Taylora36/NextMove/assets/118857845/6b7032d6-2419-4fc4-a3af-130d15a8ebcc">
+<img width="934" alt="Screenshot 2023-06-05 191354" src="https://github.com/Taylora36/NextMove/assets/118857845/de715ead-083e-4089-8b74-2a8f3e1caca7">
+
 # WebApp boilerplate with React JS and Flask API
 
 Build web applications using React.js for the front end and python/flask for your backend API.
