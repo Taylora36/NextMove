@@ -36,7 +36,7 @@ Census.org is a buggy API
 ## Features
 ### Home Page
 <img width="470" alt="Screenshot 2023-06-18 140803" src="https://github.com/Taylora36/NextMove/assets/118857845/6b7032d6-2419-4fc4-a3af-130d15a8ebcc">
-<img width="450" alt="Screenshot 2023-06-05 191354" src="https://github.com/Taylora36/NextMove/assets/118857845/de715ead-083e-4089-8b74-2a8f3e1caca7">
+<img width="470" alt="Screenshot 2023-06-05 191354" src="https://github.com/Taylora36/NextMove/assets/118857845/de715ead-083e-4089-8b74-2a8f3e1caca7">
 
 ### Login/Signup
 <img width="416" alt="Screenshot 2023-06-18 142507" src="https://github.com/Taylora36/NextMove/assets/118857845/efc61a51-7e51-44d6-8158-a174cb5588bd">
